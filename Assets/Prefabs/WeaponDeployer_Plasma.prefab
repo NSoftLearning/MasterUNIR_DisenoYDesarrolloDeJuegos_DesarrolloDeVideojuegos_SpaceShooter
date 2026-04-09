@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 905913963972516162}
   - component: {fileID: 9156462849403232145}
   m_Layer: 0
-  m_Name: Weapon_PlasmaDeployer
+  m_Name: WeaponDeployer_Plasma
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,6 +44,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14b52e18a2259ee48a9f34a7f9397f45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WeaponDeployer
-  _weapon: {fileID: 6688632793984213101, guid: 5a4fddad7a1790e4da8cbb6f9b5fdcd2, type: 3}
+  _weapon: {fileID: 4006518776011108591, guid: 5a4fddad7a1790e4da8cbb6f9b5fdcd2, type: 3}
   _burstDelay: 0.3
   _firstDeploymentDelay: 0

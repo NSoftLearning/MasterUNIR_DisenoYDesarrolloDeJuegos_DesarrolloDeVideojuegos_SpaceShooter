@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class WeaponDeployer : MonoBehaviour
 {
-    [SerializeField] Weapon _weapon;
+    [SerializeField] DamageOnContactWeapon _weapon;
     [SerializeField] float _burstDelay;
     [SerializeField] float _firstDeploymentDelay;
 
