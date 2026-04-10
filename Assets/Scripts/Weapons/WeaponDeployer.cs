@@ -15,8 +15,7 @@ public class WeaponDeployer : MonoBehaviour
 
     private void Start()
     {
-        _deployingWeapons = false;
-        
+        _deployingWeapons = false;        
     }
 
 

@@ -170,6 +170,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a391d9c12e5b0e64db14b63f1bed892c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DamageOnContactWeapon
+  validtargets:
+  - {fileID: 11400000, guid: 357b9319a26c71341a1fc90e75d10965, type: 2}
+  _strength: 1
 --- !u!114 &6805618797184571970
 MonoBehaviour:
   m_ObjectHideFlags: 0
