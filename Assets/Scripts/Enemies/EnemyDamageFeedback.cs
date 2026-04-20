@@ -9,7 +9,8 @@ public class EnemyDamageFeedback : MonoBehaviour
     [SerializeField] float _colorChangeDuration = 1;
     [SerializeField] float _inDamagedColorDuration = .2f;
     [SerializeField] GameObject _destroyedFX;
-
+    [SerializeField] AudioClip _receiveDamageClip;
+    [SerializeField] AudioSource _audioSource;
 
     Coroutine colorChangeCorroutine;
     float effectStartTime;
@@ -24,6 +25,9 @@ public class EnemyDamageFeedback : MonoBehaviour
         effectEndTime = Time.time + _colorChangeDuration + _inDamagedColorDuration;
         colorChangeCorroutine = StartCoroutine(BackToNormalColor());
 
+
+        _audioSource.clip = _receiveDamageClip;
+        _audioSource.Play();
     }
 
     public void ShowDestroyedFeedback()

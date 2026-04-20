@@ -2657,6 +2657,28 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Explosion_12
+      rect:
+        serializedVersion: 2
+        x: 7070
+        y: 169
+        width: 491
+        height: 444
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1e520fea677bed42a3b6c1d388ab208
+      internalID: -759953838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -2682,6 +2704,7 @@ TextureImporter:
       Explosion_09: -7323674943459820596
       Explosion_10: 9148803566423877661
       Explosion_11: -4016013334462737405
+      Explosion_12: -759953838
       items_0: 6761164967045977113
       items_1: 5508725064705088119
       items_10: 8132948862792318974

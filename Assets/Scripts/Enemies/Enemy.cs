@@ -9,7 +9,7 @@ public class Enemy : MonoBehaviour, IDamageable
     [SerializeField] int maxLife = 2;
     [SerializeField] int scoreProvided;
     [SerializeField] int currencyProvided;
-
+   
     
     [SerializeField] int _currentLife;
 
