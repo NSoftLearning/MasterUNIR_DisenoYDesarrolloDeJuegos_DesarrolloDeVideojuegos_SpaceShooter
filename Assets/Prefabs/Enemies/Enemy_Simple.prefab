@@ -159,8 +159,9 @@ GameObject:
   - component: {fileID: 761398415857338102}
   - component: {fileID: 1031580536862346318}
   - component: {fileID: 3794892688884084528}
+  - component: {fileID: 4579807402056698535}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: Enemy_Simple
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -268,7 +269,40 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
   _damageableType: {fileID: 11400000, guid: 357b9319a26c71341a1fc90e75d10965, type: 2}
-  maxLife: 2
+  maxLife: 4
+  scoreProvided: 0
+  currencyProvided: 0
+  _currentLife: 0
+  enemyDied:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4579807402056698535}
+        m_TargetAssemblyTypeName: EnemyDamageFeedback, Assembly-CSharp
+        m_MethodName: ShowDestroyedFeedback
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  ememyDamaged:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4579807402056698535}
+        m_TargetAssemblyTypeName: EnemyDamageFeedback, Assembly-CSharp
+        m_MethodName: ShowDamageFeedback
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &3794892688884084528
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -284,3 +318,21 @@ MonoBehaviour:
   _speed: 10
   _direction: {x: -1, y: 0}
   _rigidbody: {fileID: 761398415857338102}
+--- !u!114 &4579807402056698535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3715846554180709376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8581c48d0dc7fed4294e8f14fe18e488, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyDamageFeedback
+  _enemySpriteRenderer: {fileID: 6162720321011953301}
+  _normalColor: {r: 1, g: 1, b: 1, a: 1}
+  _damageColor: {r: 1, g: 0, b: 0, a: 1}
+  _colorChangeDuration: 1
+  _inDamagedColorDuration: 0.2
+  _destroyedFX: {fileID: 8623551685150839560, guid: cbcf03ea1213b434990d4241f837459e, type: 3}

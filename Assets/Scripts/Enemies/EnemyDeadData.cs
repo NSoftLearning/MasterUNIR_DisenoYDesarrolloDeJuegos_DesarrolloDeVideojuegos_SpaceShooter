@@ -1,4 +1,5 @@
-public struct EnemyDeadData
+
+public struct EnemyDeadData 
 {    
     public int scoreProvided;
     public int currencyProvided;

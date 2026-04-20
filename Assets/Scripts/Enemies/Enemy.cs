@@ -1,6 +1,7 @@
 using NUnit.Framework;
 using System;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Enemy : MonoBehaviour, IDamageable
 {
@@ -10,9 +11,10 @@ public class Enemy : MonoBehaviour, IDamageable
     [SerializeField] int currencyProvided;
 
     
-    int _currentLife;
+    [SerializeField] int _currentLife;
 
-    public Action<EnemyDeadData> enemyDied;
+    public UnityEvent<EnemyDeadData> enemyDied;
+    public UnityEvent ememyDamaged;
     private void Start()
     {
         _currentLife = maxLife;
@@ -28,5 +30,9 @@ public class Enemy : MonoBehaviour, IDamageable
             enemyDied.Invoke(new EnemyDeadData (scoreProvided, currencyProvided));
             Destroy(gameObject);
         }
+        else
+        {
+            ememyDamaged.Invoke();
+        }            
     }
 }
