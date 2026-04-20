@@ -13,9 +13,9 @@ public class EnemySpawner : MonoBehaviour
     IEnumerator SpawnEnemies ()
     {
 
-        for (int i = 0; i< 5; i++) {
+        for (int i = 0; i< 10; i++) {
             Instantiate(enemy, transform.position, Quaternion.identity);
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(.35f);
 
         }
     }

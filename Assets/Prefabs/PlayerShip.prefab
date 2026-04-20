@@ -148,6 +148,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2496765528974747068}
   - component: {fileID: 1602633118139612321}
+  - component: {fileID: 3052847872175627575}
   - component: {fileID: 2976502439811737872}
   - component: {fileID: 9036465365978805479}
   m_Layer: 0
@@ -189,6 +190,23 @@ MonoBehaviour:
   _movementInputAction: {fileID: -4641550153832238392, guid: e5824a008087b384ab395e8c78831f62, type: 3}
   _maxSpeed: 10
   _rigidbody2d: {fileID: 9036465365978805479}
+--- !u!114 &3052847872175627575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7344036724405617862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afbae3d23365ed64386ce40e0fb0ff9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerLife
+  _damageableType: {fileID: 11400000, guid: 871ce76de25a6f043bd6756fe6e56380, type: 2}
+  maxLife: 100
+  PlayerDied:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!70 &2976502439811737872
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
