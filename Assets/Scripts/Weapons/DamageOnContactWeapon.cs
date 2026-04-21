@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class DamageOnContactWeapon : MonoBehaviour, IDamageDealer
 {
-    [SerializeField] List <DamageableType> validtargets;
+    [SerializeField] List <DamageableTypeSO> validtargets;
     [SerializeField] int _strength;
 
-    public List<DamageableType> ValidTargets => validtargets;
+    public List<DamageableTypeSO> ValidTargets => validtargets;
     public int Strength => _strength;
 
     public void OnTriggerEnter2D(Collider2D collision)

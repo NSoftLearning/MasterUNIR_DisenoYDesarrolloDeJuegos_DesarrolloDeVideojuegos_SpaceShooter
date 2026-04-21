@@ -301,7 +301,7 @@ GameObject:
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &138547825
 Transform:
   m_ObjectHideFlags: 0
@@ -330,6 +330,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemySpawner
   enemy: {fileID: 495608737939918725, guid: a4a8c57118bd66740a73de31b9c52091, type: 3}
+  gameStatus: {fileID: 11400000, guid: 8ea06170422fdca4d893aa003c64e274, type: 2}
 --- !u!1 &153392156
 GameObject:
   m_ObjectHideFlags: 0
@@ -3044,7 +3045,7 @@ GameObject:
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1567764847
 Transform:
   m_ObjectHideFlags: 0
@@ -3072,7 +3073,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e4f280bb2834ce448022e837c178f5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemySpawner
-  enemy: {fileID: 495608737939918725, guid: a4a8c57118bd66740a73de31b9c52091, type: 3}
+  enemy: {fileID: 4225143264798255670, guid: a4a8c57118bd66740a73de31b9c52091, type: 3}
+  gameStatus: {fileID: 11400000, guid: 8ea06170422fdca4d893aa003c64e274, type: 2}
 --- !u!1 &1643053632
 GameObject:
   m_ObjectHideFlags: 0
@@ -3195,7 +3197,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e4f280bb2834ce448022e837c178f5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemySpawner
-  enemy: {fileID: 495608737939918725, guid: a4a8c57118bd66740a73de31b9c52091, type: 3}
+  enemy: {fileID: 4225143264798255670, guid: a4a8c57118bd66740a73de31b9c52091, type: 3}
+  gameStatus: {fileID: 11400000, guid: 8ea06170422fdca4d893aa003c64e274, type: 2}
 --- !u!1 &1905484763
 GameObject:
   m_ObjectHideFlags: 0

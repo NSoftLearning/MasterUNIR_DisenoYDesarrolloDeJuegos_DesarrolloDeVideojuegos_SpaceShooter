@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -6,7 +7,7 @@ public class PlayerLife : MonoBehaviour, IDamageable
     [Header("Watch only")]
     [SerializeField] int _currentLife;
     [Header("Config")]
-    [SerializeField] DamageableType _damageableType;
+    [SerializeField] DamageableTypeSO _damageableType;
     [SerializeField] int _maxLife;
     [SerializeField] UnityEvent _PlayerDied;
     [SerializeField] UnityEvent <PlayerStatusData> _PlayerDamaged;
@@ -14,7 +15,9 @@ public class PlayerLife : MonoBehaviour, IDamageable
 
 
     float _invulnerableUntil;
-    public DamageableType Type => _damageableType;
+
+
+    public DamageableTypeSO Type => _damageableType;
 
     void Start ()
     {
@@ -33,6 +36,7 @@ public class PlayerLife : MonoBehaviour, IDamageable
         if (_currentLife <= 0)
         {
             _PlayerDied.Invoke();
+            
             Destroy(gameObject);
         }
         else

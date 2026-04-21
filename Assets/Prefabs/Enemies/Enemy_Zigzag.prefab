@@ -125,8 +125,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
   _damageableType: {fileID: 11400000, guid: 357b9319a26c71341a1fc90e75d10965, type: 2}
   maxLife: 2
-  scoreProvided: 0
-  currencyProvided: 0
+  scoreProvided: 15
+  currencyProvided: 20
   _currentLife: 0
   enemyDied:
     m_PersistentCalls:
