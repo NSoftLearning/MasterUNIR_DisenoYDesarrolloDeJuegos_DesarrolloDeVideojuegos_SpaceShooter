@@ -138,6 +138,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c5227e6f9dd4314abfb8ec0ddbbd1cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ExplosionFX
+  _audioSource: {fileID: 2296017529116907542}
 --- !u!95 &4429800572083272343
 Animator:
   serializedVersion: 7

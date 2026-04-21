@@ -8,8 +8,9 @@ public class EnemyDamageFeedback : MonoBehaviour
     [SerializeField] Color _damageColor = Color.red;
     [SerializeField] float _colorChangeDuration = 1;
     [SerializeField] float _inDamagedColorDuration = .2f;
-    [SerializeField] GameObject _destroyedFX;
+    [SerializeField] ExplosionFX _destroyedFX;
     [SerializeField] AudioClip _receiveDamageClip;
+    [SerializeField] AudioClip _destroyedAudioClip;
     [SerializeField] AudioSource _audioSource;
 
     Coroutine colorChangeCorroutine;
@@ -32,7 +33,8 @@ public class EnemyDamageFeedback : MonoBehaviour
 
     public void ShowDestroyedFeedback()
     {
-        Instantiate(_destroyedFX, transform.position, Quaternion.identity);       
+        ExplosionFX explosion = Instantiate(_destroyedFX, transform.position, Quaternion.identity);
+        explosion.Initialize(_destroyedAudioClip);
     }
 
     IEnumerator BackToNormalColor ()

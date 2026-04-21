@@ -191,8 +191,9 @@ MonoBehaviour:
   _damageColor: {r: 1, g: 0, b: 0, a: 1}
   _colorChangeDuration: 1
   _inDamagedColorDuration: 0.2
-  _destroyedFX: {fileID: 8623551685150839560, guid: cbcf03ea1213b434990d4241f837459e, type: 3}
+  _destroyedFX: {fileID: 4802145485079496175, guid: cbcf03ea1213b434990d4241f837459e, type: 3}
   _receiveDamageClip: {fileID: 8300000, guid: a81c58c41f16fcd42a66905048d3d902, type: 3}
+  _destroyedAudioClip: {fileID: 8300000, guid: f4b314147da0c2c44a96266aa55844d7, type: 3}
   _audioSource: {fileID: 1704298990316684979}
 --- !u!82 &1704298990316684979
 AudioSource:
