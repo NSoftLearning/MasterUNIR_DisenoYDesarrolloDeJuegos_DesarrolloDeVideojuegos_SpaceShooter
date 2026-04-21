@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 135251434245448633}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.131, y: 0, z: 0}
+  m_LocalPosition: {x: 1.4, y: 0, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -218,6 +218,8 @@ GameObject:
   - component: {fileID: 2391739056675288481}
   - component: {fileID: 1208346288591122532}
   - component: {fileID: 5306821731279245429}
+  - component: {fileID: 3594591659069527302}
+  - component: {fileID: 1789499959484372292}
   m_Layer: 0
   m_Name: Enemy_Missile
   m_TagString: Untagged
@@ -282,10 +284,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AcceleratedForwardMovementPhysics
   _rigidBody: {fileID: 1119235803671343250}
-  _startingVelocity: 0.5
-  _maxVelocity: 200
+  _startingVelocity: 2
+  _maxVelocity: 500
   _timeToMaxVelocity: 0.5
-  _startAccelerationDelay: 3
+  _startAccelerationDelay: 4
 --- !u!114 &1208346288591122532
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -301,8 +303,10 @@ MonoBehaviour:
   _missileMovement: {fileID: 2391739056675288481}
   _reticle: {fileID: 135251434245448633}
   _audioSource: {fileID: 5306821731279245429}
+  _explosionFX: {fileID: 4802145485079496175, guid: cbcf03ea1213b434990d4241f837459e, type: 3}
   _missileLaunchedWarning: {fileID: 8300000, guid: 179cad0552c51964a960579719dbd5a6, type: 3}
   _missileEngineClip: {fileID: 8300000, guid: 5c8ffbfe39c28c94c849b95bee9f4ced, type: 3}
+  _missileExplosion: {fileID: 8300000, guid: 9171bdb106eefe84ea9f8d30373f216a, type: 3}
 --- !u!82 &5306821731279245429
 AudioSource:
   m_ObjectHideFlags: 0
@@ -400,6 +404,58 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &3594591659069527302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5864525514261988399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a391d9c12e5b0e64db14b63f1bed892c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DamageOnContactWeapon
+  validtargets:
+  - {fileID: 11400000, guid: 871ce76de25a6f043bd6756fe6e56380, type: 2}
+  _strength: 50
+--- !u!70 &1789499959484372292
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5864525514261988399}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0.26, y: 0}
+  m_Size: {x: 3.65, y: 0.38}
+  m_Direction: 1
 --- !u!1 &6792741679096253796
 GameObject:
   m_ObjectHideFlags: 0

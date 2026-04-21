@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -7,12 +8,13 @@ public class DamageOnContactWeapon : MonoBehaviour, IDamageDealer
     [SerializeField] List <DamageableTypeSO> validtargets;
     [SerializeField] int _strength;
 
+    
     public List<DamageableTypeSO> ValidTargets => validtargets;
     public int Strength => _strength;
+    public event Action validTargetHit;
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("trigger", this);
         IDamageable damageableHit = collision.GetComponent<IDamageable>();
 
         if (damageableHit == null ||
@@ -20,11 +22,8 @@ public class DamageOnContactWeapon : MonoBehaviour, IDamageDealer
             return;
 
         damageableHit.ReceiveDamage(this);
-        Destroy(gameObject);
-    }
+        validTargetHit?.Invoke();
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        Debug.Log("collision", this);
+        Destroy(gameObject);
     }
 }

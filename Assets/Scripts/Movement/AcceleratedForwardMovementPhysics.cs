@@ -28,10 +28,6 @@ public class AcceleratedForwardMovementPhysics : MonoBehaviour
 
     private void Update()
     {
-        //     if (Time.time < _startAccelerationTime)
-        //           return;
-        //      if (_rigidBody.linearVelocity.magnitude > _maxVelocity)
-        //          return;
 
         if (Time.time < _startAccelerationTime)
             return;
@@ -45,9 +41,7 @@ public class AcceleratedForwardMovementPhysics : MonoBehaviour
         float newVelocity = Mathf.Lerp(_startingVelocity, _maxVelocity, (Time.time - _startAccelerationTime) / _timeToMaxVelocity);
         
         _rigidBody.linearVelocity = _rigidBody.linearVelocity.normalized * newVelocity;
-        maxSpeedReached.Invoke();
-        Debug.Log("lerp velocity --> " + newVelocity + "## at rigidbody " + _rigidBody.linearVelocity.magnitude);
-
+        maxSpeedReached.Invoke();    
 
     }
 

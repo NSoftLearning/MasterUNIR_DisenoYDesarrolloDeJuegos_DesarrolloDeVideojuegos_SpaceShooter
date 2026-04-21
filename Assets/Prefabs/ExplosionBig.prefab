@@ -27,7 +27,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8885174347749301595}
@@ -104,7 +104,7 @@ GameObject:
   - component: {fileID: 4429800572083272343}
   - component: {fileID: 2296017529116907542}
   m_Layer: 0
-  m_Name: Explosion
+  m_Name: ExplosionBig
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -172,7 +172,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: 9171bdb106eefe84ea9f8d30373f216a, type: 3}
+  m_Resource: {fileID: 8300000, guid: 8d3c923d19c9b7d468dbac1d1c90e87c, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1

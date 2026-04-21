@@ -1665,7 +1665,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3715846554180709376, guid: 71949f89633e0d74da79d175e859a088, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3719717937905631819, guid: 71949f89633e0d74da79d175e859a088, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2238,7 +2238,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1237278428
 Transform:
   m_ObjectHideFlags: 0
@@ -2847,7 +2847,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5676245122612674042, guid: 5a4fddad7a1790e4da8cbb6f9b5fdcd2, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3613,6 +3613,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2391739056675288481, guid: 13837b8c25f6f6246bfc15f6b5b50a5a, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2391739056675288481, guid: 13837b8c25f6f6246bfc15f6b5b50a5a, type: 3}
       propertyPath: _maxVelocity
       value: 500
       objectReference: {fileID: 0}
@@ -3628,17 +3632,21 @@ PrefabInstance:
       propertyPath: _startAccelerationDelay
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 3594591659069527302, guid: 13837b8c25f6f6246bfc15f6b5b50a5a, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5864525514261988399, guid: 13837b8c25f6f6246bfc15f6b5b50a5a, type: 3}
       propertyPath: m_Name
       value: Enemy_Missile
       objectReference: {fileID: 0}
     - target: {fileID: 7650851168951722775, guid: 13837b8c25f6f6246bfc15f6b5b50a5a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 21.09
+      value: -4.99
       objectReference: {fileID: 0}
     - target: {fileID: 7650851168951722775, guid: 13837b8c25f6f6246bfc15f6b5b50a5a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 16
+      value: 10.17
       objectReference: {fileID: 0}
     - target: {fileID: 7650851168951722775, guid: 13837b8c25f6f6246bfc15f6b5b50a5a, type: 3}
       propertyPath: m_LocalPosition.z
