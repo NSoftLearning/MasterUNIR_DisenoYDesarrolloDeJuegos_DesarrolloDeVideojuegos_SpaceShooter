@@ -149,6 +149,7 @@ GameObject:
   - component: {fileID: 2496765528974747068}
   - component: {fileID: 1602633118139612321}
   - component: {fileID: 3052847872175627575}
+  - component: {fileID: 3802670837874695532}
   - component: {fileID: 2976502439811737872}
   - component: {fileID: 9036465365978805479}
   m_Layer: 0
@@ -202,11 +203,79 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afbae3d23365ed64386ce40e0fb0ff9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerLife
+  _currentLife: 0
   _damageableType: {fileID: 11400000, guid: 871ce76de25a6f043bd6756fe6e56380, type: 2}
-  maxLife: 100
-  PlayerDied:
+  _maxLife: 100
+  _PlayerDied:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3802670837874695532}
+        m_TargetAssemblyTypeName: PlayerDamageFeedback, Assembly-CSharp
+        m_MethodName: ShowDeathFeedback
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: MainUiController, Assembly-CSharp
+        m_MethodName: ExitRedAlert
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _PlayerDamaged:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3802670837874695532}
+        m_TargetAssemblyTypeName: PlayerDamageFeedback, Assembly-CSharp
+        m_MethodName: SetTransparent
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: MainUiController, Assembly-CSharp
+        m_MethodName: UpdateLifeBar
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _afterHitInvulnerabilityTime: 2
+--- !u!114 &3802670837874695532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7344036724405617862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fedaebf8d9290ea42a9b6391ac8a90a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerDamageFeedback
+  _playerSpriteRenderer: {fileID: 6235135808182654561}
+  _invulnerableColor: {r: 1, g: 0.1372549, b: 0.14570235, a: 0.27058825}
+  _explosion: {fileID: 8623551685150839560, guid: cbcf03ea1213b434990d4241f837459e, type: 3}
 --- !u!70 &2976502439811737872
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -252,14 +321,14 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7344036724405617862}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2

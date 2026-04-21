@@ -3,21 +3,41 @@ using UnityEngine.Events;
 
 public class PlayerLife : MonoBehaviour, IDamageable
 {
+    [Header("Watch only")]
+    [SerializeField] int _currentLife;
+    [Header("Config")]
     [SerializeField] DamageableType _damageableType;
-    [SerializeField] int maxLife;
-    [SerializeField] UnityEvent PlayerDied;
+    [SerializeField] int _maxLife;
+    [SerializeField] UnityEvent _PlayerDied;
+    [SerializeField] UnityEvent <PlayerStatusData> _PlayerDamaged;
+    [SerializeField] float _afterHitInvulnerabilityTime = 2;
 
-    int _currentLife;
-    
+
+    float _invulnerableUntil;
     public DamageableType Type => _damageableType;
+
+    void Start ()
+    {
+        _currentLife = _maxLife;
+        _invulnerableUntil = Time.time;
+    }
 
     public void ReceiveDamage(IDamageDealer damageDealer)
     {
+        if (Time.time <= _invulnerableUntil)
+            return;
+
+
         _currentLife -= damageDealer.Strength;
+        _invulnerableUntil = Time.time + _afterHitInvulnerabilityTime;
         if (_currentLife <= 0)
         {
-            PlayerDied.Invoke();
+            _PlayerDied.Invoke();
             Destroy(gameObject);
+        }
+        else
+        {
+            _PlayerDamaged.Invoke(new PlayerStatusData(_afterHitInvulnerabilityTime, _maxLife, _currentLife));
         }
     }
 }
