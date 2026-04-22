@@ -12,10 +12,17 @@ public class EnemyDamageFeedback : MonoBehaviour
     [SerializeField] AudioClip _receiveDamageClip;
     [SerializeField] AudioClip _destroyedAudioClip;
     [SerializeField] AudioSource _audioSource;
-
+    [SerializeField] float _explosionScale = 1;
+    Enemy _enemy;
     Coroutine colorChangeCorroutine;
     float effectStartTime;
     float effectEndTime;
+
+    private void Awake()
+    {
+        _enemy = GetComponent<Enemy>();
+    }
+
     public void ShowDamageFeedback()
     {
         if (colorChangeCorroutine != null)
@@ -31,10 +38,10 @@ public class EnemyDamageFeedback : MonoBehaviour
         _audioSource.Play();
     }
 
-    public void ShowDestroyedFeedback()
+    public void ShowDestroyedFeedback(EnemyDeadData eneyDeadData)
     {
         ExplosionFX explosion = Instantiate(_destroyedFX, transform.position, Quaternion.identity);
-        explosion.Initialize(_destroyedAudioClip, Vector3.one);
+        explosion.Initialize(_destroyedAudioClip, Vector3.one * 2.5f);
     }
 
     IEnumerator BackToNormalColor ()
@@ -47,5 +54,18 @@ public class EnemyDamageFeedback : MonoBehaviour
         }
     }
 
+    private void OnEnable()
+    {
+        _enemy.enemyDamagedAction += ShowDamageFeedback;
+        _enemy.enemyDiedAction += ShowDestroyedFeedback;
+;
+}
+
+    private void OnDisable()
+    {
+        _enemy.enemyDamagedAction -= ShowDamageFeedback;
+        _enemy.enemyDiedAction -= ShowDestroyedFeedback;
+
+    }
 
 }

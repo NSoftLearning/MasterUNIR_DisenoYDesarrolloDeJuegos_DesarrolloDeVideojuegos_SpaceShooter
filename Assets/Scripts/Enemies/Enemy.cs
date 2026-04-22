@@ -13,9 +13,11 @@ public class Enemy : MonoBehaviour, IDamageable
     
     [SerializeField] int _currentLife;
 
-    public UnityEvent<EnemyDeadData> enemyDied;
-    public UnityEvent ememyDamaged;
+   // public UnityEvent<EnemyDeadData> enemyDied_UNITYEVENT;
+   // public UnityEvent ememyDamaged_UNITYEVENT;
 
+    public event Action<EnemyDeadData> enemyDiedAction;
+    public event Action enemyDamagedAction;
 
     private void Start()
     {
@@ -29,12 +31,14 @@ public class Enemy : MonoBehaviour, IDamageable
         _currentLife -= damageDealer.Strength;
         if (_currentLife <= 0)
         {            
-            enemyDied.Invoke(new EnemyDeadData (scoreProvided, currencyProvided));            
+            //enemyDied_UNITYEVENT.Invoke(new EnemyDeadData (scoreProvided, currencyProvided));
+            enemyDiedAction.Invoke(new EnemyDeadData(scoreProvided, currencyProvided));
             Destroy(gameObject);
         }
         else
         {
-            ememyDamaged.Invoke();
+           // ememyDamaged_UNITYEVENT.Invoke();
+            enemyDamagedAction.Invoke();
         }            
     }
 }

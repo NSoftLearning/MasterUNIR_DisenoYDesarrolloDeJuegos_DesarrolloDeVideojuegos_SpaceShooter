@@ -17,8 +17,8 @@ public class EnemySpawner : MonoBehaviour
         for (int i = 0; i< 10; i++) {
 
             Enemy newEnemy = Instantiate(enemy, transform.position, Quaternion.identity);
-            newEnemy.enemyDied.AddListener(gameStatus.HandleEnemyDead);
-
+            newEnemy.enemyDiedAction += gameStatus.HandleEnemyDead;
+                            
             yield return new WaitForSeconds(.35f);
 
         }

@@ -7,11 +7,11 @@ public class EnemyMissileFeedback : MonoBehaviour
     [SerializeField] AcceleratedForwardMovementPhysics _missileMovement;
     [SerializeField] GameObject _reticle;
     [SerializeField] AudioSource _audioSource;
-    [SerializeField] ExplosionFX _explosionFX;
 
     [SerializeField] AudioClip _missileLaunchedWarning;
     [SerializeField] AudioClip _missileEngineClip;
-    [SerializeField] AudioClip _missileExplosion;
+    [SerializeField] AudioClip _destroyedAudioClip;
+    [SerializeField] ExplosionFX _destroyedFX;
 
     IDamageDealer _damageDealer;
 
@@ -35,25 +35,24 @@ public class EnemyMissileFeedback : MonoBehaviour
         _audioSource.clip = _missileEngineClip;
         _audioSource.Play();
     }
-
-    private void MissileHitFeedback()
+    private void ShowHitFeedback()
     {
-        ExplosionFX explosionFX = Instantiate(_explosionFX, transform.position, Quaternion.identity);
-        explosionFX.Initialize(_missileExplosion, Vector3.one * 2.5f);
+        ExplosionFX explosion = Instantiate(_destroyedFX, transform.position, Quaternion.identity);
+        explosion.Initialize(_destroyedAudioClip, Vector3.one * 2.5f);
     }
-
     private void OnEnable()
     {
         _missileMovement.maxSpeedReached += HideReticle;
         _missileMovement.accelerationStarted += AccelerateMissile;
-        _damageDealer.validTargetHit += MissileHitFeedback;
-            
-    }
+        _damageDealer.validTargetHit += ShowHitFeedback;
+     }
+
+ 
 
     private void OnDisable()
     {
         _missileMovement.maxSpeedReached -= HideReticle;
         _missileMovement.accelerationStarted -= AccelerateMissile;
-        _damageDealer.validTargetHit -= MissileHitFeedback;
+        _damageDealer.validTargetHit -= ShowHitFeedback;
     }
 }

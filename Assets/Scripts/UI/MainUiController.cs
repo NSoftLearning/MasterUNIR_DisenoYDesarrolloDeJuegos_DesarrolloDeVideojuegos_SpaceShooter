@@ -5,10 +5,10 @@ using UnityEngine.UI;
 
 public class MainUiController : MonoBehaviour
 {
-    [SerializeField] Sprite[] _lifeBar;
-    [SerializeField] Image _healthBarImge;
     [SerializeField] Image _redAlertWheel;
     [SerializeField] AudioSource _audioSource;
+    [SerializeField] Image _healthBarForeground;
+    [SerializeField] float _redAlertTreshold = .2f;
     private void Start()
     {
         _redAlertWheel.gameObject.SetActive(false);
@@ -18,11 +18,11 @@ public class MainUiController : MonoBehaviour
 
     public void UpdateLifeBar (PlayerStatusData playerDamagedData)
     {
-        float barIndex = ((float)playerDamagedData.remainingHealth / playerDamagedData.maxHealth) * (_lifeBar.Length - 1);
 
-        Debug.Log("bar index " + barIndex);
-        _healthBarImge.sprite = _lifeBar[(int)barIndex];
-        if (barIndex < .5f)
+        float remainingHealth = (float)playerDamagedData.remainingHealth / playerDamagedData.maxHealth;
+        _healthBarForeground.fillAmount = remainingHealth;
+        
+        if (remainingHealth < _redAlertTreshold)
         {
             EnterRedAlert();
         }else

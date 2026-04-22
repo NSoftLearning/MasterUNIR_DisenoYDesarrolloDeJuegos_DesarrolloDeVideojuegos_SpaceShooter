@@ -216,9 +216,11 @@ GameObject:
   - component: {fileID: 7650851168951722775}
   - component: {fileID: 1119235803671343250}
   - component: {fileID: 2391739056675288481}
+  - component: {fileID: 1781902148267302531}
   - component: {fileID: 1208346288591122532}
   - component: {fileID: 5306821731279245429}
   - component: {fileID: 3594591659069527302}
+  - component: {fileID: 5287502041284281098}
   - component: {fileID: 1789499959484372292}
   m_Layer: 0
   m_Name: Enemy_Missile
@@ -288,6 +290,28 @@ MonoBehaviour:
   _maxVelocity: 500
   _timeToMaxVelocity: 0.5
   _startAccelerationDelay: 4
+--- !u!114 &1781902148267302531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5864525514261988399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8581c48d0dc7fed4294e8f14fe18e488, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyDamageFeedback
+  _enemySpriteRenderer: {fileID: 4264173093288995113}
+  _normalColor: {r: 1, g: 1, b: 1, a: 1}
+  _damageColor: {r: 1, g: 0, b: 0, a: 1}
+  _colorChangeDuration: 1
+  _inDamagedColorDuration: 0.2
+  _destroyedFX: {fileID: 4802145485079496175, guid: cbcf03ea1213b434990d4241f837459e, type: 3}
+  _receiveDamageClip: {fileID: 8300000, guid: a81c58c41f16fcd42a66905048d3d902, type: 3}
+  _destroyedAudioClip: {fileID: 8300000, guid: 9171bdb106eefe84ea9f8d30373f216a, type: 3}
+  _audioSource: {fileID: 5306821731279245429}
+  _explosionScale: 1
 --- !u!114 &1208346288591122532
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -303,10 +327,10 @@ MonoBehaviour:
   _missileMovement: {fileID: 2391739056675288481}
   _reticle: {fileID: 135251434245448633}
   _audioSource: {fileID: 5306821731279245429}
-  _explosionFX: {fileID: 4802145485079496175, guid: cbcf03ea1213b434990d4241f837459e, type: 3}
   _missileLaunchedWarning: {fileID: 8300000, guid: 179cad0552c51964a960579719dbd5a6, type: 3}
   _missileEngineClip: {fileID: 8300000, guid: 5c8ffbfe39c28c94c849b95bee9f4ced, type: 3}
-  _missileExplosion: {fileID: 8300000, guid: 9171bdb106eefe84ea9f8d30373f216a, type: 3}
+  _destroyedAudioClip: {fileID: 8300000, guid: 9171bdb106eefe84ea9f8d30373f216a, type: 3}
+  _destroyedFX: {fileID: 4802145485079496175, guid: cbcf03ea1213b434990d4241f837459e, type: 3}
 --- !u!82 &5306821731279245429
 AudioSource:
   m_ObjectHideFlags: 0
@@ -419,6 +443,23 @@ MonoBehaviour:
   validtargets:
   - {fileID: 11400000, guid: 871ce76de25a6f043bd6756fe6e56380, type: 2}
   _strength: 50
+--- !u!114 &5287502041284281098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5864525514261988399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04f7b47f1231a6b41a6774e6f3dae8c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Enemy
+  _damageableType: {fileID: 11400000, guid: 357b9319a26c71341a1fc90e75d10965, type: 2}
+  maxLife: 10
+  scoreProvided: 100
+  currencyProvided: 50
+  _currentLife: 0
 --- !u!70 &1789499959484372292
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
