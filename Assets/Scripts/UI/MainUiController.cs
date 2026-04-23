@@ -42,4 +42,10 @@ public class MainUiController : MonoBehaviour
         _audioSource.Stop();
     }
 
+    public void SetPlayerAsKilled()
+    {
+        ExitRedAlert();
+        _healthBarForeground.fillAmount = 0;
+    }
+
 }

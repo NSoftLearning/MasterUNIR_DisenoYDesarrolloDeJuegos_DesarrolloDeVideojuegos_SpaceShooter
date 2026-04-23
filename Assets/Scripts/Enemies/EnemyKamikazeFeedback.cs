@@ -10,25 +10,25 @@ public class EnemyKamikazeFeedback : MonoBehaviour
 
     private void Awake()
     {
-        _damageDealer = GetComponent<IDamageDealer>();
+       // _damageDealer = GetComponent<IDamageDealer>();
     }
 
 
     private void ShowHitFeedback()
     {
-        ExplosionFX explosionFX = Instantiate(_explosionFX, transform.position, Quaternion.identity);
-        explosionFX.Initialize(_hitTargetClip, Vector2.one);
+     //   ExplosionFX explosionFX = Instantiate(_explosionFX, transform.position, Quaternion.identity);
+     //   explosionFX.Initialize(_hitTargetClip, Vector2.one);
     }
 
 
     private void OnEnable()
     {
-        _damageDealer.validTargetHit += ShowHitFeedback;
+      //  _damageDealer.validTargetHit += ShowHitFeedback;
     }
 
     private void OnDisable()
     {
-        _damageDealer.validTargetHit -= ShowHitFeedback;
+      //  _damageDealer.validTargetHit -= ShowHitFeedback;
     }
 
 

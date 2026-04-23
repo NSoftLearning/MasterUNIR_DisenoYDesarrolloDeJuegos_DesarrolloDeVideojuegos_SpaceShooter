@@ -457,8 +457,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
   _damageableType: {fileID: 11400000, guid: 357b9319a26c71341a1fc90e75d10965, type: 2}
   maxLife: 10
-  scoreProvided: 100
-  currencyProvided: 50
+  _scoreProvided: 200
+  _currencyProvided: 5
+  _damageOnHitWithPlayer: 100
   _currentLife: 0
 --- !u!70 &1789499959484372292
 CapsuleCollider2D:

@@ -7,6 +7,7 @@ public class DamageOnContactWeapon : MonoBehaviour, IDamageDealer
 {
     [SerializeField] List <DamageableTypeSO> validtargets;
     [SerializeField] int _strength;
+    [SerializeField] bool _selfDestroyOnHit = false;
 
     
     public List<DamageableTypeSO> ValidTargets => validtargets;
@@ -25,6 +26,7 @@ public class DamageOnContactWeapon : MonoBehaviour, IDamageDealer
         damageableHit.ReceiveDamage(this);
         validTargetHit?.Invoke();
 
-        Destroy(gameObject);
+        if (_selfDestroyOnHit)
+            Destroy(gameObject);
     }
 }

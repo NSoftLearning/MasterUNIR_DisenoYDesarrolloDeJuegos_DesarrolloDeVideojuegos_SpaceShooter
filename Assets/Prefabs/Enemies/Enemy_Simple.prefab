@@ -256,9 +256,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
   _damageableType: {fileID: 11400000, guid: 357b9319a26c71341a1fc90e75d10965, type: 2}
   maxLife: 4
-  scoreProvided: 10
-  currencyProvided: 10
-  _currentLife: 0
+  _scoreProvided: 10
+  _currencyProvided: 1
+  _damageOnHitWithPlayer: 100
+  _currentLife: 5
 --- !u!114 &3794892688884084528
 MonoBehaviour:
   m_ObjectHideFlags: 0

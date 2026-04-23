@@ -52,6 +52,7 @@ MonoBehaviour:
   validtargets:
   - {fileID: 11400000, guid: 871ce76de25a6f043bd6756fe6e56380, type: 2}
   _strength: 10
+  _selfDestroyOnHit: 1
 --- !u!114 &1169011677831785040
 MonoBehaviour:
   m_ObjectHideFlags: 0
