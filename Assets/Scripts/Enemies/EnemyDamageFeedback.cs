@@ -42,7 +42,7 @@ public class EnemyDamageFeedback : MonoBehaviour
     public void ShowDestroyedFeedback(EnemyDeadData eneyDeadData)
     {
         ExplosionFX explosion = Instantiate(_destroyedFX, transform.position, Quaternion.identity);
-        explosion.Initialize(_destroyedAudioClip, Vector3.one * 2.5f);
+        explosion.Initialize(_destroyedAudioClip, Vector3.one * _explosionScale);
     }
 
     IEnumerator BackToNormalColor ()
