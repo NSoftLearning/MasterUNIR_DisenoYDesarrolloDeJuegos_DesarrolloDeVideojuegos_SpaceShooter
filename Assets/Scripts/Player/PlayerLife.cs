@@ -19,6 +19,8 @@ public class PlayerLife : MonoBehaviour, IDamageable
 
     public DamageableTypeSO Type => _damageableType;
 
+    public bool UnderTemporalDamageProtection => _invulnerableUntil > Time.time;
+
     void Start ()
     {
         _currentLife = _maxLife;

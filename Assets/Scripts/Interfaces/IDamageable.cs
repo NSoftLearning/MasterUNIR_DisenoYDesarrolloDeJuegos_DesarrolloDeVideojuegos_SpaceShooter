@@ -4,7 +4,8 @@ using UnityEngine;
 
 public interface IDamageable
 {
-   DamageableTypeSO Type { get; }
+    DamageableTypeSO Type { get; }
+    bool UnderTemporalDamageProtection { get; }
 
     void ReceiveDamage(IDamageDealer damageDealer);
 }

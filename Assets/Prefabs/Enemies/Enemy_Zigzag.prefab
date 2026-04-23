@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: 2806624988575799399}
   - component: {fileID: 8781289083853744615}
   - component: {fileID: 1704298990316684979}
+  - component: {fileID: 7595324473592291761}
+  - component: {fileID: 888366362028873102}
   m_Layer: 0
   m_Name: Enemy_Zigzag
   m_TagString: Untagged
@@ -263,6 +265,35 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &7595324473592291761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 495608737939918725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a391d9c12e5b0e64db14b63f1bed892c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DamageOnContactWeapon
+  validtargets:
+  - {fileID: 11400000, guid: 871ce76de25a6f043bd6756fe6e56380, type: 2}
+  _strength: 25
+--- !u!114 &888366362028873102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 495608737939918725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: add3f3f72cee5b74eba0b8ddddb1b664, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyKamikazeFeedback
+  _explosionFX: {fileID: 4802145485079496175, guid: cbcf03ea1213b434990d4241f837459e, type: 3}
+  _hitTargetClip: {fileID: 8300000, guid: e6dcdcd95999a3f46af77f81defbc483, type: 3}
 --- !u!1 &4219048518244213179
 GameObject:
   m_ObjectHideFlags: 0

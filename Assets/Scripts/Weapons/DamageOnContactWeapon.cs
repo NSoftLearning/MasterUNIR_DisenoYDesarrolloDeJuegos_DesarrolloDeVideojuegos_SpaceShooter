@@ -18,7 +18,8 @@ public class DamageOnContactWeapon : MonoBehaviour, IDamageDealer
         IDamageable damageableHit = collision.GetComponent<IDamageable>();
 
         if (damageableHit == null ||
-            !ValidTargets.Contains(damageableHit.Type))
+            !ValidTargets.Contains(damageableHit.Type) ||
+            damageableHit.UnderTemporalDamageProtection)
             return;
 
         damageableHit.ReceiveDamage(this);

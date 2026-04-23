@@ -18,6 +18,7 @@ public class EnemyDamageFeedback : MonoBehaviour
     float effectStartTime;
     float effectEndTime;
 
+
     private void Awake()
     {
         _enemy = GetComponent<Enemy>();

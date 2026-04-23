@@ -47,6 +47,7 @@ GameObject:
   - component: {fileID: 1031580536862346318}
   - component: {fileID: 3794892688884084528}
   - component: {fileID: 4579807402056698535}
+  - component: {fileID: 3340589022531283560}
   m_Layer: 0
   m_Name: Enemy_Simple
   m_TagString: Untagged
@@ -258,36 +259,6 @@ MonoBehaviour:
   scoreProvided: 10
   currencyProvided: 10
   _currentLife: 0
-  enemyDied:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4579807402056698535}
-        m_TargetAssemblyTypeName: EnemyDamageFeedback, Assembly-CSharp
-        m_MethodName: ShowDestroyedFeedback
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  ememyDamaged:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4579807402056698535}
-        m_TargetAssemblyTypeName: EnemyDamageFeedback, Assembly-CSharp
-        m_MethodName: ShowDamageFeedback
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &3794892688884084528
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -324,6 +295,22 @@ MonoBehaviour:
   _receiveDamageClip: {fileID: 8300000, guid: a81c58c41f16fcd42a66905048d3d902, type: 3}
   _destroyedAudioClip: {fileID: 8300000, guid: cbd00f80080eb36469a13d6e57a32215, type: 3}
   _audioSource: {fileID: 529312024337003417}
+  _explosionScale: 1
+--- !u!114 &3340589022531283560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3715846554180709376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a391d9c12e5b0e64db14b63f1bed892c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DamageOnContactWeapon
+  validtargets:
+  - {fileID: 11400000, guid: 871ce76de25a6f043bd6756fe6e56380, type: 2}
+  _strength: 5
 --- !u!1 &4088544828008949928
 GameObject:
   m_ObjectHideFlags: 0

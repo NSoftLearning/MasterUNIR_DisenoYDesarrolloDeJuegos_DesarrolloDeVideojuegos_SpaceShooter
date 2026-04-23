@@ -19,13 +19,17 @@ public class Enemy : MonoBehaviour, IDamageable
     public event Action<EnemyDeadData> enemyDiedAction;
     public event Action enemyDamagedAction;
 
+    
+
     private void Start()
     {
         _currentLife = maxLife;
     }
 
     public DamageableTypeSO Type => _damageableType;
-    
+
+    public bool UnderTemporalDamageProtection => false;
+
     public void ReceiveDamage(IDamageDealer damageDealer)
     {
         _currentLife -= damageDealer.Strength;

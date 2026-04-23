@@ -277,7 +277,7 @@ MonoBehaviour:
   _playerSpriteRenderer: {fileID: 6235135808182654561}
   _invulnerableColor: {r: 1, g: 0.1372549, b: 0.14570235, a: 0.45490196}
   _explosion: {fileID: 4802145485079496175, guid: cbcf03ea1213b434990d4241f837459e, type: 3}
-  _reciveDamageClip: {fileID: 8300000, guid: 57407394821fd884f8716849152709ee, type: 3}
+  _reciveDamageClip: {fileID: 8300000, guid: 94e6892bf0e999f4c86fb3bf94a55932, type: 3}
   _audioSource: {fileID: 1513467680563406300}
 --- !u!70 &2976502439811737872
 CapsuleCollider2D:
