@@ -39,7 +39,7 @@ public class EnemyDamageFeedback : MonoBehaviour
         _audioSource.Play();
     }
 
-    public void ShowDestroyedFeedback(EnemyDeadData eneyDeadData)
+    public void ShowDestroyedFeedback(DamageableDestroyedData eneyDeadData)
     {
         ExplosionFX explosion = Instantiate(_destroyedFX, transform.position, Quaternion.identity);
         explosion.Initialize(_destroyedAudioClip, Vector3.one * _explosionScale);

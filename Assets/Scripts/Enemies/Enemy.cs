@@ -16,7 +16,7 @@ public class Enemy : MonoBehaviour, IDamageable
    // public UnityEvent<EnemyDeadData> enemyDied_UNITYEVENT;
    // public UnityEvent ememyDamaged_UNITYEVENT;
 
-    public event Action<EnemyDeadData> enemyDiedAction;
+    public event Action<DamageableDestroyedData> enemyDiedAction;
     public event Action enemyDamagedAction;
 
     IDamageDealer _damageDealer;
@@ -47,7 +47,7 @@ public class Enemy : MonoBehaviour, IDamageable
         if (_currentLife <= 0)
         {
             //enemyDied_UNITYEVENT.Invoke(new EnemyDeadData (scoreProvided, currencyProvided));
-            enemyDiedAction.Invoke(new EnemyDeadData(_scoreProvided, _currencyProvided));
+            enemyDiedAction.Invoke(new DamageableDestroyedData(_scoreProvided, _currencyProvided));
             Destroy(gameObject);
         }
         else

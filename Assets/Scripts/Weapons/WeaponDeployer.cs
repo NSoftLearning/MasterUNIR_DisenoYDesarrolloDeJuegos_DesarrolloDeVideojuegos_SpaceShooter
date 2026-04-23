@@ -12,10 +12,12 @@ public class WeaponDeployer : MonoBehaviour
 
 
     float _nextFireTime;
+    bool _oneOrMoreWeaponsDeployedInCycle;
 
     private void Start()
     {
-        _deployingWeapons = false;        
+        _deployingWeapons = false;
+        _nextFireTime = Time.time + _burstDelay + _firstDeploymentDelay;
     }
 
 
@@ -28,19 +30,22 @@ public class WeaponDeployer : MonoBehaviour
             return;
 
         DeployWeapon();
+        _oneOrMoreWeaponsDeployedInCycle = true;
         _nextFireTime = Time.time + _burstDelay;
 
     }
 
     public void StartDeployingWeapons()
-    {
+    {        
         _deployingWeapons = true;
-        _nextFireTime = Time.time + _firstDeploymentDelay;
+        _oneOrMoreWeaponsDeployedInCycle = false;
     }
 
     public void StopDeployingWeapons()
-    {
+    {        
         _deployingWeapons = false;
+        if (_oneOrMoreWeaponsDeployedInCycle)
+            _nextFireTime = Time.time + _burstDelay + _firstDeploymentDelay;
     }
 
     void DeployWeapon()

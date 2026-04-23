@@ -24,14 +24,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 268223447228535948}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -1, w: 0.00000058114523}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2831547247931785506}
   m_Father: {fileID: 3719717937905631819}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -180}
 --- !u!1 &3715846554180709376
 GameObject:
   m_ObjectHideFlags: 0
@@ -312,6 +312,7 @@ MonoBehaviour:
   validtargets:
   - {fileID: 11400000, guid: 871ce76de25a6f043bd6756fe6e56380, type: 2}
   _strength: 5
+  _selfDestroyOnHit: 0
 --- !u!1 &4088544828008949928
 GameObject:
   m_ObjectHideFlags: 0
@@ -321,7 +322,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3031293102868389545}
-  - component: {fileID: 6692921017095895527}
+  - component: {fileID: 6614573309920058407}
+  - component: {fileID: 8820018899094183519}
   m_Layer: 0
   m_Name: WeaponDeployer
   m_TagString: Untagged
@@ -337,14 +339,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4088544828008949928}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -1, w: 0.00000058114523}
-  m_LocalPosition: {x: -1.02, y: -0, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.098, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8690338761285470910}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -180}
---- !u!114 &6692921017095895527
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6614573309920058407
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -353,12 +355,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 4088544828008949928}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 44b00ab32bec4fe4ebd39b8caa32b113, type: 3}
+  m_Script: {fileID: 11500000, guid: 66b175a209e90e843bfb533d18338877, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TimeBasedWeaponDeployer
-  _weapon: {fileID: 4871580853998699391, guid: c4f711c864ba13c40a3b0dbee7a470ee, type: 3}
-  _initialDelay: 0.5
-  _burstDelay: 1.5
+  m_EditorClassIdentifier: Assembly-CSharp::SimpleEnemyWeaponDeployer
+  _weaponToDeploy: {fileID: 4871580853998699391, guid: c4f711c864ba13c40a3b0dbee7a470ee, type: 3}
+--- !u!114 &8820018899094183519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4088544828008949928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bcedadc825eb1d64c835de96932ca9f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TimeBasedWeaponDeployerControl
+  _initialDelay: 1
+  _burstDelay: 1
 --- !u!1 &5203638686369667840
 GameObject:
   m_ObjectHideFlags: 0

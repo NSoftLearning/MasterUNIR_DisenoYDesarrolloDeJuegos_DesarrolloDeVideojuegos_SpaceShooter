@@ -10,10 +10,10 @@ public class GameStatusSO : ScriptableObject
     public Action<int> scoreChanged;
 
 
-    public  void HandleEnemyDead (EnemyDeadData enemyDeadData)
+    public  void HandleEnemyDead (DamageableDestroyedData enemyDeadData)
     {
-        _score += enemyDeadData.scoreProvided;
-        _cash += enemyDeadData.currencyProvided;         
+        _score += enemyDeadData.scoreModifier;
+        _cash += enemyDeadData.currencyModifier;         
     }
 
 

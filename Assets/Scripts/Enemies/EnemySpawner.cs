@@ -6,6 +6,7 @@ public class EnemySpawner : MonoBehaviour
 {
     [SerializeField] private Enemy enemy;
     [SerializeField] private GameStatusSO gameStatus;
+    [SerializeField] private int quantity;
     private void Start()
     {
         StartCoroutine(SpawnEnemies()); 
@@ -14,15 +15,19 @@ public class EnemySpawner : MonoBehaviour
     IEnumerator SpawnEnemies ()
     {
 
-        for (int i = 0; i< 10; i++) {
-
-            Enemy newEnemy = Instantiate(enemy, transform.position, Quaternion.identity);
-            newEnemy.enemyDiedAction += gameStatus.HandleEnemyDead;
-                            
-            yield return new WaitForSeconds(.35f);
+        for (int i = 0; i< quantity; i++) {
+            SpawnSingleEnemy();
+           yield return new WaitForSeconds(.35f);
 
         }
     }
 
+
+    [ContextMenu(nameof (SpawnSingleEnemy))]
+    public void SpawnSingleEnemy ()
+    {
+        Enemy newEnemy = Instantiate(enemy, transform.position, transform.rotation);
+        newEnemy.enemyDiedAction += gameStatus.HandleEnemyDead;
+    }
 
 }
