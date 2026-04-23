@@ -16,14 +16,7 @@ public class DestroyedBasedWeaponDeployerControl : MonoBehaviour, IWeaponDeploye
     {
         _damageable = GetComponentInParent<IDamageable>();
     }
-
-
-
-    public void Update()
-    {
-        Debug.Log("");
-    }
-
+    
     public void HandleDamageableDestroyed (DamageableDestroyedData data)
     {
         if (UnityEngine.Random.Range(0, 100) <= _deploymendProbability)

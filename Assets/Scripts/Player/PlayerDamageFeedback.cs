@@ -11,7 +11,13 @@ public class PlayerDamageFeedback : MonoBehaviour
 
     [SerializeField] AudioSource _audioSource;
 
+    PlayerLife _playerLife;
     Coroutine stayTransparent;
+
+    private void Awake()
+    {
+        _playerLife = GetComponent<PlayerLife>();
+    }
     public void ShowDamageFeedback (PlayerStatusData playerDamagedData)
     {      
         if (stayTransparent != null)
@@ -34,5 +40,17 @@ public class PlayerDamageFeedback : MonoBehaviour
         yield return new WaitForSeconds(transparencyDuration);
         _playerSpriteRenderer.color = Color.white;
             
+    }
+
+    private void OnEnable()
+    {
+        _playerLife.PlayerDamagedAction += ShowDamageFeedback;
+        _playerLife.PlayerDiedAction += ShowDeathFeedback;
+    }
+
+    private void OnDisable()
+    {
+        _playerLife.PlayerDamagedAction -= ShowDamageFeedback;
+        _playerLife.PlayerDiedAction -= ShowDeathFeedback;
     }
 }

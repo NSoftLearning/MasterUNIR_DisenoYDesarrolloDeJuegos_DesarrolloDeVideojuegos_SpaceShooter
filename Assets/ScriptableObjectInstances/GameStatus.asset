@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22ff8cac1d899a145be605fb1d8d1946, type: 3}
   m_Name: GameStatus
   m_EditorClassIdentifier: Assembly-CSharp::GameStatusSO
-  Score: 0
-  Cash: 0
+  _score: 310
+  _cash: 4

@@ -9,8 +9,8 @@ public class PlayerLife : MonoBehaviour, IDamageable
     [Header("Config")]
     [SerializeField] DamageableTypeSO _damageableType;
     [SerializeField] int _maxLife;
-    [SerializeField] UnityEvent _PlayerDied;
-    [SerializeField] UnityEvent <PlayerStatusData> _PlayerDamaged;
+    public event Action PlayerDiedAction;
+    public event Action <PlayerStatusData> PlayerDamagedAction;
     [SerializeField] float _afterHitInvulnerabilityTime = 2;
 
 
@@ -38,13 +38,12 @@ public class PlayerLife : MonoBehaviour, IDamageable
         _invulnerableUntil = Time.time + _afterHitInvulnerabilityTime;
         if (_currentLife <= 0)
         {
-            _PlayerDied.Invoke();
-            
-            Destroy(gameObject);
+            PlayerDiedAction.Invoke();
+            gameObject.SetActive(false);
         }
         else
-        {
-            _PlayerDamaged.Invoke(new PlayerStatusData(_afterHitInvulnerabilityTime, _maxLife, _currentLife));
+        { 
+            PlayerDamagedAction.Invoke  (new PlayerStatusData(_afterHitInvulnerabilityTime, _maxLife, _currentLife));
         }
     }
 }

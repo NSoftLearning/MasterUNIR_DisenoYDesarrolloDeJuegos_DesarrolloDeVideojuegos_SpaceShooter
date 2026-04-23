@@ -1,3 +1,4 @@
+using System.Text;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -9,9 +10,12 @@ public class MainUiController : MonoBehaviour
     [SerializeField] AudioSource _audioSource;
     [SerializeField] Image _healthBarForeground;
     [SerializeField] float _redAlertTreshold = .2f;
+    [SerializeField] TMP_Text _score;
+    [SerializeField] TMP_Text _currency;
+
     private void Start()
     {
-        _redAlertWheel.gameObject.SetActive(false);
+        _redAlertWheel.gameObject.SetActive(false);        
     }
 
 
@@ -29,6 +33,19 @@ public class MainUiController : MonoBehaviour
         {
             ExitRedAlert();
         }
+    }
+
+    public void RefreshCurrency (int newScore)
+    {
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.Append("Score: ");
+        stringBuilder.Append(newScore);
+        _score.text = stringBuilder.ToString();
+    }
+
+    public void RefreshCash (int newCurrency)
+    {
+        _currency.text = newCurrency.ToString();
     }
 
     void EnterRedAlert()

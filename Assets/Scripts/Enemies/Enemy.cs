@@ -10,7 +10,7 @@ public class Enemy : MonoBehaviour, IDamageable
     [SerializeField] int _scoreProvided;
     [SerializeField] int _currencyProvided;
     [SerializeField] int _damageOnHitWithPlayer = 100;
-    
+    [SerializeField] bool _forcePositionInFrontOfPlayer = false;
     [SerializeField] int _currentLife;
 
    // public UnityEvent<EnemyDeadData> enemyDied_UNITYEVENT;
@@ -30,6 +30,8 @@ public class Enemy : MonoBehaviour, IDamageable
     private void Start()
     {
         _currentLife = maxLife;
+        if (_forcePositionInFrontOfPlayer)
+            transform.position = new Vector3(transform.position.x, ComponentLocatorService.Components.PlayerTransform.position.y, 0);
     }
 
     public DamageableTypeSO Type => _damageableType;

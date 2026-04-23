@@ -4,6 +4,7 @@ using UnityEngine;
 public class SimpleEnemyWeaponDeployer : MonoBehaviour
 {
     [SerializeField] GameObject _weaponToDeploy;
+    [SerializeField] Transform _deploymentTransform;
 
     IWeaponDeployerControl _weaponDeployerControl;
 
@@ -15,7 +16,10 @@ public class SimpleEnemyWeaponDeployer : MonoBehaviour
 
     private void DeployWeapon()
     {
-        Instantiate(_weaponToDeploy, transform.position, transform.rotation);
+        if (_deploymentTransform == null)   
+            Instantiate(_weaponToDeploy, transform.position, transform.rotation);
+        else
+            Instantiate(_weaponToDeploy, _deploymentTransform.position, _deploymentTransform.rotation);
     }
 
     private void OnEnable()
