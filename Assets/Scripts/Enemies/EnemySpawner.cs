@@ -8,12 +8,14 @@ public class EnemySpawner : MonoBehaviour
 {
     [SerializeField] public SpawnPointSO spawnPointIdentifier;
     [SerializeField] EnemiesAttackVector enemiesAttackVector;
-    [SerializeField] EnemySpawnerStates _currentState;
+    [SerializeField] public EnemySpawnerStates currentState;
 
     [SerializeField] int _currentWave;
     float _nextSpawnTime;
     float _nextWaveArrivalTime;
     int _enemiesSpawnedInCurrentWave;
+
+    public event Action StartPauseForNextWave;
     public void Initialize(EnemiesAttackVector attackVector)
     {
         int currentWave = 0;       
@@ -36,12 +38,20 @@ public class EnemySpawner : MonoBehaviour
             enabled = false;
             return;
         }
-            switch (_currentState)
-        {
+            switch (currentState)
+            { 
+             
             case EnemySpawnerStates.WaitingForNextWave:
+                if (_enemiesSpawnedInCurrentWave == enemiesAttackVector.GetWaveData(_currentWave).enemyQuantity)
+                {
+                    _currentWave++;
+                    currentState = EnemySpawnerStates.Paused;
+                    break;
+                }
+
                 if (Time.time > _nextWaveArrivalTime)
                 {
-                    _currentState = EnemySpawnerStates.SpawiningWave;
+                    currentState = EnemySpawnerStates.SpawiningWave;
                     _nextSpawnTime = Time.time + enemiesAttackVector.GetWaveData(_currentWave).enemyToEnemyDelay;
                     _enemiesSpawnedInCurrentWave = 0;
                 }
@@ -70,11 +80,12 @@ public class EnemySpawner : MonoBehaviour
 
 
                     if (_currentWave >= enemiesAttackVector.GetWavesCount())
-                        _currentState = EnemySpawnerStates.AllWavesSpawned;
+                        currentState = EnemySpawnerStates.AllWavesSpawned;
                     else
                     {
-                        _nextWaveArrivalTime = Time.time + enemiesAttackVector.GetWaveData(_currentWave).startDelay;
-                        _currentState = EnemySpawnerStates.WaitingForNextWave;
+                        //_nextWaveArrivalTime = Time.time + enemiesAttackVector.GetWaveData(_currentWave).startDelay;
+                        currentState = EnemySpawnerStates.Paused;
+                        StartPauseForNextWave.Invoke();
                     }
                 }
 
@@ -83,6 +94,17 @@ public class EnemySpawner : MonoBehaviour
                 break;
 
         }
+
+    }
+
+    public void ResumeFromPaused ()
+    {
+        if (currentState == EnemySpawnerStates.AllWavesSpawned)
+            return;
+
+        _enemiesSpawnedInCurrentWave = 0;
+        _nextWaveArrivalTime = Time.time + enemiesAttackVector.GetWaveData(_currentWave).startDelay;
+        currentState = EnemySpawnerStates.WaitingForNextWave;
 
     }
 

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: EMPTY_WAVE
   m_EditorClassIdentifier: Assembly-CSharp::standardEnemyGroupSO
   startDelay: 3
-  enemyType: {fileID: 1031580536862346318, guid: 71949f89633e0d74da79d175e859a088, type: 3}
-  enemyToEnemyDelay: 2.2
+  enemyType: {fileID: 4225143264798255670, guid: a4a8c57118bd66740a73de31b9c52091, type: 3}
+  enemyToEnemyDelay: 5
   enemyQuantity: 0
   spawnPointAdjustment: 1

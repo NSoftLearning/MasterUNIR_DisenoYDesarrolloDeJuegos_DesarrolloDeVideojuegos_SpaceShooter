@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::standardEnemyGroupSO
   startDelay: 3
   enemyType: {fileID: 1031580536862346318, guid: 71949f89633e0d74da79d175e859a088, type: 3}
-  enemyToEnemyDelay: 2.2
+  enemyToEnemyDelay: 1
   enemyQuantity: 4
   spawnPointAdjustment: 1

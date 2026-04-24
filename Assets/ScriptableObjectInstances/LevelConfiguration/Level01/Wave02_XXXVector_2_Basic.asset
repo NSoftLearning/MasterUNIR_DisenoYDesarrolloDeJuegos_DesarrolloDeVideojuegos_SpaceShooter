@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a27ea685f204a745b1dd84e8c85dc75, type: 3}
   m_Name: Wave02_XXXVector_2_Basic
   m_EditorClassIdentifier: Assembly-CSharp::standardEnemyGroupSO
-  startDelay: 3
+  startDelay: 5
   enemyType: {fileID: 1031580536862346318, guid: 71949f89633e0d74da79d175e859a088, type: 3}
   enemyToEnemyDelay: 2.2
   enemyQuantity: 4
