@@ -18,9 +18,9 @@ public class TurretController : MonoBehaviour
         if (_transformToRotate == null)
             return;
 
-        Vector3 updatedDirection = _targetTransform.position - _transformToRotate.position;
-        _transformToRotate.right = updatedDirection;                             
-            
+        Vector3 direction = _targetTransform.position - _transformToRotate.position; 
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg; 
+        _transformToRotate.rotation = Quaternion.Euler(0f, 0f, angle);                         
     }
 
 

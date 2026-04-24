@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5a27ea685f204a745b1dd84e8c85dc75, type: 3}
-  m_Name: Wave02_CenterVector_2_Basic
+  m_Name: Wave03_MediumVector_Missile
   m_EditorClassIdentifier: Assembly-CSharp::standardEnemyGroupSO
-  startDelay: 5
-  enemyType: {fileID: 1031580536862346318, guid: 71949f89633e0d74da79d175e859a088, type: 3}
-  enemyToEnemyDelay: 0.6
-  enemyQuantity: 8
-  spawnPointAdjustment: 2
+  startDelay: 6
+  enemyType: {fileID: 5287502041284281098, guid: 13837b8c25f6f6246bfc15f6b5b50a5a, type: 3}
+  enemyToEnemyDelay: 2
+  enemyQuantity: 3
+  spawnPointAdjustment: 0

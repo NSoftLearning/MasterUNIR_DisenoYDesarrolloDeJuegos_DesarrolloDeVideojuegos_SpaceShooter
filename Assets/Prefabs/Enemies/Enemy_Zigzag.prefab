@@ -128,7 +128,7 @@ MonoBehaviour:
   _damageableType: {fileID: 11400000, guid: 357b9319a26c71341a1fc90e75d10965, type: 2}
   maxLife: 4
   _scoreProvided: 100
-  _currencyProvided: 1
+  _currencyProvided: 2
   _damageOnHitWithPlayer: 100
   _forcePositionInFrontOfPlayer: 0
   _currentLife: 4
@@ -360,7 +360,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30a8c211183ec3e4bb7d02137062031f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DestroyedBasedWeaponDeployerControl
-  _deploymendProbability: 20
+  _deploymendProbability: 50
 --- !u!114 &5987862995065551629
 MonoBehaviour:
   m_ObjectHideFlags: 0

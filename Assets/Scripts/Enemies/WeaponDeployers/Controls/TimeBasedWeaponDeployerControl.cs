@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class TimeBasedWeaponDeployerControl : MonoBehaviour, IWeaponDeployerControl
 {
-    //[SerializeField] GameObject _weapon;
     [SerializeField] float _initialDelay;
     [SerializeField] float _burstDelay;
 
@@ -14,7 +13,7 @@ public class TimeBasedWeaponDeployerControl : MonoBehaviour, IWeaponDeployerCont
 
     private void Start()
     {
-        nextFireTime = Time.time + _initialDelay;
+        nextFireTime = Time.time + _initialDelay + UnityEngine.Random.Range(0f, 1f);
     }
 
     private void Update()

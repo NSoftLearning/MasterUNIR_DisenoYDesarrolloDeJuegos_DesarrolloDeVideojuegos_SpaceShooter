@@ -66,7 +66,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ForwardMovementPhysics
   _rigidBody: {fileID: 4020770926378413299}
-  _velocity: 10
+  _velocity: 15
 --- !u!82 &4008523584731206201
 AudioSource:
   m_ObjectHideFlags: 0

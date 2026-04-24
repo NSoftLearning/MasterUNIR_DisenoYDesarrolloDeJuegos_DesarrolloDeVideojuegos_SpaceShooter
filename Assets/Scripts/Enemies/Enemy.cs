@@ -45,10 +45,11 @@ public class Enemy : MonoBehaviour, IDamageable
 
     void ApplyDamage (int incomingDamage)
     {
+        if (_currentLife < 0)
+            return;
         _currentLife -= incomingDamage;
         if (_currentLife <= 0)
         {
-            //enemyDied_UNITYEVENT.Invoke(new EnemyDeadData (scoreProvided, currencyProvided));
             enemyDiedAction.Invoke(new DamageableDestroyedData(_scoreProvided, _currencyProvided));
             Destroy(gameObject);
         }

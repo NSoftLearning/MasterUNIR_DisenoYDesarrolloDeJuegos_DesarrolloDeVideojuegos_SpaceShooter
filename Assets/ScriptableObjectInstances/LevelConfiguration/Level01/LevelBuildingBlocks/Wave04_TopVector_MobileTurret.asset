@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a27ea685f204a745b1dd84e8c85dc75, type: 3}
+  m_Name: Wave04_TopVector_MobileTurret
+  m_EditorClassIdentifier: Assembly-CSharp::standardEnemyGroupSO
+  startDelay: 5
+  enemyType: {fileID: 1550672489544401707, guid: 9ef0e4f1a97d41f4689b6adf550cf196, type: 3}
+  enemyToEnemyDelay: 3
+  enemyQuantity: 3
+  spawnPointAdjustment: 0

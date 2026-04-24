@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a27ea685f204a745b1dd84e8c85dc75, type: 3}
+  m_Name: Wave04_BottomVector_Grower
+  m_EditorClassIdentifier: Assembly-CSharp::standardEnemyGroupSO
+  startDelay: 5
+  enemyType: {fileID: 4505391250943652486, guid: 1281d7c0e787a0046a28608e03a9fa45, type: 3}
+  enemyToEnemyDelay: 1
+  enemyQuantity: 2
+  spawnPointAdjustment: 1

@@ -12,16 +12,17 @@ public class ZigzagMovement : MonoBehaviour
     float _spawnedTime;
     void Start()
     {
-        _initialPosition = transform.position;
-        _spawnedTime = Time.time; 
+        
+        _spawnedTime = Time.time;   
     }
 
-    public void Initialize(float amplitude, float forwardSpeed, float zigzagSpeed, bool inverted)
+    public void Initialize(float amplitude, float forwardSpeed, float zigzagSpeed, bool inverted, Vector3 initialPosition)
     {
         _amplitude = amplitude;
         _forwardSpeed = forwardSpeed;
         _zigzagSpeed = zigzagSpeed;
-        _inverted = inverted;        
+        _inverted = inverted;
+        _initialPosition = initialPosition;
     }
 
     void Update()
@@ -29,9 +30,12 @@ public class ZigzagMovement : MonoBehaviour
         //Time.time - _spawnedTime --> para que empiecen en un punto de la onda dependiente del momento de spawneo
         //*zigzagspeed --> se mueven mas rapido por la onda
         //+_initialPosition.y --> oscilan en torno al punto de spawneo
-        float calculatedY = Mathf.Sin((Time.time - _spawnedTime) * _zigzagSpeed) * _amplitude + _initialPosition.y;
+
+        float calculatedCos = Mathf.Cos((Time.time - _spawnedTime) * _zigzagSpeed);
         if (_inverted)
-            calculatedY *= -1;
+            calculatedCos *= -1;
+        float calculatedY = calculatedCos * _amplitude + _initialPosition.y;
+        
         transform.position = new Vector3(transform.position.x + _forwardSpeed * Time.deltaTime, calculatedY, _initialPosition.z);         
     }
 }

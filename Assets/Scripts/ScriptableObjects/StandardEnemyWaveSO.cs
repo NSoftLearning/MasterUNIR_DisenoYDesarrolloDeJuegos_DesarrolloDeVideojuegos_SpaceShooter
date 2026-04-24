@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu (fileName = "NewEnemyGroup",menuName = "ScriptableObjects/EnemyWaves/NewEnemyGroup")]
+[CreateAssetMenu (fileName = "StandardEnemyWave", menuName = "ScriptableObjects/EnemyWaves/StandardEnemyWave")]
 public class StandardEnemyWaveSO : ScriptableObject, IEnemyFactory
 {
     public float startDelay;
@@ -11,9 +11,11 @@ public class StandardEnemyWaveSO : ScriptableObject, IEnemyFactory
     
 
   
-    public Enemy CreateEnemy (Vector3 position, Quaternion rotation)
+    public virtual Enemy CreateEnemy (Vector3 position, Quaternion rotation)
     {
-        return Instantiate(enemyType, position, rotation);
+       Enemy newEnemy =  Instantiate(enemyType, position, rotation);
+       newEnemy.enemyDiedAction += ComponentLocatorService.Components.GameStatus.HandleEnemyDead;
+        return newEnemy;
     }
 
     public WaveData GetWaveData()

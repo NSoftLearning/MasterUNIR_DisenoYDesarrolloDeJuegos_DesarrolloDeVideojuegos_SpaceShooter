@@ -69,9 +69,7 @@ public class EnemySpawner : MonoBehaviour
                     CalculateSpawnPointAdjustedPosition (enemiesAttackVector.GetWaveData(_currentWave).spawnPointAdjustment),
                     transform.rotation);
                 _enemiesSpawnedInCurrentWave++;
-                _nextSpawnTime = Time.time + enemiesAttackVector.GetWaveData(_currentWave).enemyToEnemyDelay;
-
-                Debug.Log("SPAWNED ENEMY " + this.name + " wave " + _currentWave);
+                _nextSpawnTime = Time.time + enemiesAttackVector.GetWaveData(_currentWave).enemyToEnemyDelay;            
 
                
                 if (_enemiesSpawnedInCurrentWave == enemiesAttackVector.GetWaveData(_currentWave).enemyQuantity)
