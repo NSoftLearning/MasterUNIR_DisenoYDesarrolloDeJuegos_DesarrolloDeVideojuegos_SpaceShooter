@@ -2618,6 +2618,17 @@ MonoBehaviour:
   enemiesAttackVector: {fileID: 0}
   currentState: 0
   _currentWave: 0
+--- !u!114 &1665569543 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7180827666636038325, guid: b08f38f3c812d9149bdc85e33df3b437, type: 3}
+  m_PrefabInstance: {fileID: 2815766005048369362}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8126c3bc3ef5e614ab5ec7d7f2628bef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LevelSetup
 --- !u!1 &1666160942
 GameObject:
   m_ObjectHideFlags: 0
@@ -3250,6 +3261,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 841645541}
     - target: {fileID: 6657341649691969613, guid: b08f38f3c812d9149bdc85e33df3b437, type: 3}
+      propertyPath: _levelControl
+      value: 
+      objectReference: {fileID: 1665569543}
+    - target: {fileID: 6657341649691969613, guid: b08f38f3c812d9149bdc85e33df3b437, type: 3}
       propertyPath: _mainUiController
       value: 
       objectReference: {fileID: 554488381}
@@ -3401,6 +3416,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2496765528974747068, guid: 6239235772cb17249a0211650d5e36ed, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2976502439811737872, guid: 6239235772cb17249a0211650d5e36ed, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3052847872175627575, guid: 6239235772cb17249a0211650d5e36ed, type: 3}

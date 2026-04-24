@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c5f2776f710f6743852728d340b4bb0, type: 3}
+  m_Name: Level01_TestLevel
+  m_EditorClassIdentifier: Assembly-CSharp::LevelDataSO
+  _enemiesAttackVectors:
+  - {fileID: 11400000, guid: 4a1ee78bf32d51b4baf015f6ae7a4072, type: 2}
+  - {fileID: 11400000, guid: 81a669c921d8d974aa7fed1106d4426d, type: 2}
+  - {fileID: 11400000, guid: bcef03a5579208245b695b8551ede432, type: 2}

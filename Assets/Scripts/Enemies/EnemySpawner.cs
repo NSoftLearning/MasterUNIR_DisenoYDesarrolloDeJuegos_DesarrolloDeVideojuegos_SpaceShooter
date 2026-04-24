@@ -14,8 +14,13 @@ public class EnemySpawner : MonoBehaviour
     float _nextSpawnTime;
     float _nextWaveArrivalTime;
     int _enemiesSpawnedInCurrentWave;
+    
 
+
+    public event Action EndOfLevelReached;
     public event Action StartPauseForNextWave;
+    public event Action<Enemy> EnemySpawned;
+
     public void Initialize(EnemiesAttackVector attackVector)
     {
         int currentWave = 0;       
@@ -56,49 +61,61 @@ public class EnemySpawner : MonoBehaviour
                     _enemiesSpawnedInCurrentWave = 0;
                 }
                 break;
-            
+
             case EnemySpawnerStates.SpawiningWave:
 
                 if (Time.time < _nextSpawnTime)
                     break;
-                
-                
-                enemiesAttackVector.
-                    CreateEnemyFromWave(
-                    _currentWave, 
-                    CalculateSpawnPointAdjustedPosition (enemiesAttackVector.GetWaveData(_currentWave).spawnPointAdjustment),
-                    transform.rotation);
-                _enemiesSpawnedInCurrentWave++;
-                _nextSpawnTime = Time.time + enemiesAttackVector.GetWaveData(_currentWave).enemyToEnemyDelay;            
 
-               
+                SpawnEnemy();
+
                 if (_enemiesSpawnedInCurrentWave == enemiesAttackVector.GetWaveData(_currentWave).enemyQuantity)
                 {
                     _currentWave++;
 
-
                     if (_currentWave >= enemiesAttackVector.GetWavesCount())
+                    {
                         currentState = EnemySpawnerStates.AllWavesSpawned;
+
+                    }
                     else
                     {
-                        //_nextWaveArrivalTime = Time.time + enemiesAttackVector.GetWaveData(_currentWave).startDelay;
                         currentState = EnemySpawnerStates.Paused;
                         StartPauseForNextWave.Invoke();
                     }
                 }
-
-
-
                 break;
-
         }
 
+    }
+
+    private void SpawnEnemy()
+    {
+        Enemy newEnemy = enemiesAttackVector.
+            CreateEnemyFromWave(
+            _currentWave,
+            CalculateSpawnPointAdjustedPosition(enemiesAttackVector.GetWaveData(_currentWave).spawnPointAdjustment),
+            transform.rotation);
+        _enemiesSpawnedInCurrentWave++;
+        _nextSpawnTime = Time.time + enemiesAttackVector.GetWaveData(_currentWave).enemyToEnemyDelay;
+
+        if (enemiesAttackVector.GetWaveData(_currentWave).enemiesMustBeDestroyed)
+        {
+            EnemySpawned.Invoke(newEnemy);
+
+        }
     }
 
     public void ResumeFromPaused ()
     {
         if (currentState == EnemySpawnerStates.AllWavesSpawned)
             return;
+
+        if (enemiesAttackVector.GetWaveData(_currentWave).isEndOfLevel)
+        {
+            EndOfLevelReached.Invoke();
+            return;
+        }
 
         _enemiesSpawnedInCurrentWave = 0;
         _nextWaveArrivalTime = Time.time + enemiesAttackVector.GetWaveData(_currentWave).startDelay;

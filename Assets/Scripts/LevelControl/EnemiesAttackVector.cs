@@ -8,17 +8,18 @@ using UnityEngine;
 public class EnemiesAttackVector : ScriptableObject
 {
     public SpawnPointSO targetSpawnPoint;
-    [SerializeField] List<ScriptableObject> enemyWaves;
+    [SerializeField] List<StandardEnemyWaveSO> enemyWaves;
     
 
     public  WaveData GetWaveData (int waveIndex)
     {
-       return (enemyWaves[waveIndex] as IEnemyFactory).GetWaveData();
+        WaveData waveData =(enemyWaves[waveIndex] as IEnemyFactory).GetWaveData();
+        return waveData;
     }
-    public void CreateEnemyFromWave (int waveIndex, Vector3 enemyPosition, Quaternion enemyRotation)
+    public Enemy CreateEnemyFromWave (int waveIndex, Vector3 enemyPosition, Quaternion enemyRotation)
     {
        
-        (enemyWaves[waveIndex] as IEnemyFactory).CreateEnemy(enemyPosition, enemyRotation);
+        return (enemyWaves[waveIndex] as IEnemyFactory).CreateEnemy(enemyPosition, enemyRotation);
     }
     public int GetWavesCount()
     {

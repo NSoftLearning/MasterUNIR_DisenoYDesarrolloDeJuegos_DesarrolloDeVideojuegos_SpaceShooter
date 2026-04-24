@@ -8,11 +8,11 @@ public class ComponentsLibrary : MonoBehaviour
     [SerializeField] PlayerLife _playerLife;
     [SerializeField] MainUiController _mainUiController;
     [SerializeField] GameStatusSO _gameStatus;
-
+    [SerializeField] LevelControl _levelControl;
 
     public Transform PlayerTransform => _playerLife.gameObject.transform;
     public GameStatusSO GameStatus => _gameStatus;
-    
+    public LevelControl LevelControl => _levelControl;
 
 
     public void Awake()
