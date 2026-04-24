@@ -3420,7 +3420,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2976502439811737872, guid: 6239235772cb17249a0211650d5e36ed, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3052847872175627575, guid: 6239235772cb17249a0211650d5e36ed, type: 3}
       propertyPath: _PlayerDied.m_PersistentCalls.m_Calls.Array.data[1].m_Target
