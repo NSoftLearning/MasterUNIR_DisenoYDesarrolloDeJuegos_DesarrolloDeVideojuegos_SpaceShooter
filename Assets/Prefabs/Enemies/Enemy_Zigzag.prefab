@@ -22,7 +22,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4783585315874678628
 Transform:
   m_ObjectHideFlags: 0
@@ -130,6 +130,7 @@ MonoBehaviour:
   _scoreProvided: 100
   _currencyProvided: 1
   _damageOnHitWithPlayer: 100
+  _forcePositionInFrontOfPlayer: 0
   _currentLife: 4
 --- !u!114 &2806624988575799399
 MonoBehaviour:
@@ -373,6 +374,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SimpleEnemyWeaponDeployer
   _weaponToDeploy: {fileID: 6891938742824722442, guid: b6cb872a82d76134da91da8d3f2501b1, type: 3}
+  _deploymentTransform: {fileID: 0}
 --- !u!1 &7065349233041543294
 GameObject:
   m_ObjectHideFlags: 0

@@ -259,6 +259,7 @@ MonoBehaviour:
   _scoreProvided: 10
   _currencyProvided: 1
   _damageOnHitWithPlayer: 100
+  _forcePositionInFrontOfPlayer: 0
   _currentLife: 5
 --- !u!114 &3794892688884084528
 MonoBehaviour:
@@ -359,6 +360,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SimpleEnemyWeaponDeployer
   _weaponToDeploy: {fileID: 4871580853998699391, guid: c4f711c864ba13c40a3b0dbee7a470ee, type: 3}
+  _deploymentTransform: {fileID: 0}
 --- !u!114 &8820018899094183519
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -372,7 +374,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TimeBasedWeaponDeployerControl
   _initialDelay: 1
-  _burstDelay: 1
+  _burstDelay: 2
 --- !u!1 &5203638686369667840
 GameObject:
   m_ObjectHideFlags: 0

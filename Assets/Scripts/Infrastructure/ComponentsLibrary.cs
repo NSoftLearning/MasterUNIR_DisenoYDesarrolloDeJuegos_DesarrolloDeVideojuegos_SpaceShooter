@@ -1,4 +1,6 @@
+using NUnit.Framework;
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class ComponentsLibrary : MonoBehaviour
@@ -7,7 +9,10 @@ public class ComponentsLibrary : MonoBehaviour
     [SerializeField] MainUiController _mainUiController;
     [SerializeField] GameStatusSO _gameStatus;
 
+
     public Transform PlayerTransform => _playerLife.gameObject.transform;
+    public GameStatusSO GameStatus => _gameStatus;
+    
 
 
     public void Awake()

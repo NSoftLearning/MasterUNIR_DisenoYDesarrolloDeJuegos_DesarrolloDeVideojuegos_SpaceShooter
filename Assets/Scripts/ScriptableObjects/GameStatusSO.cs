@@ -7,6 +7,8 @@ public class GameStatusSO : ScriptableObject
 {
     [SerializeField] int _score;
     [SerializeField] int _cash;
+    public int _currentLevel;
+
 
     public Action<int> scoreChanged;
     public Action<int> cashChanged;
@@ -32,6 +34,7 @@ public class GameStatusSO : ScriptableObject
     {
         _score = 0;
         _cash = 0;
+        _currentLevel = 0;
     }
 
 
