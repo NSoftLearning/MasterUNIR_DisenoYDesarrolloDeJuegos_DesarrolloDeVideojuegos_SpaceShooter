@@ -1572,6 +1572,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GlobalAmbientGroup
       objectReference: {fileID: 0}
+    - target: {fileID: 8298814860647211562, guid: 8f6a142d51661934591d45883f1ec853, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 8300000, guid: 072f54fb0b6f10a4aab89a9f998b822b, type: 3}
     - target: {fileID: 9091403183168336795, guid: 8f6a142d51661934591d45883f1ec853, type: 3}
       propertyPath: m_LocalPosition.x
       value: 720.4506
