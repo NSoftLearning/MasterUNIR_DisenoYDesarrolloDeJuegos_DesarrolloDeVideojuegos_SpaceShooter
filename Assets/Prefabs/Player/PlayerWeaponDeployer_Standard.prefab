@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 905913963972516162}
   - component: {fileID: 9156462849403232145}
   m_Layer: 0
-  m_Name: PlayerWeaponDeployer_Plasma
+  m_Name: PlayerWeaponDeployer_Standard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -47,3 +47,5 @@ MonoBehaviour:
   _weapon: {fileID: 4006518776011108591, guid: 5a4fddad7a1790e4da8cbb6f9b5fdcd2, type: 3}
   _burstDelay: 0.5
   _firstDeploymentDelay: 0
+  _unlimitedAmmo: 1
+  _remainingAmmo: 0

@@ -7,7 +7,8 @@ public class WeaponDeployer : MonoBehaviour
     [SerializeField] DamageOnContactWeapon _weapon;
     [SerializeField] float _burstDelay;
     [SerializeField] float _firstDeploymentDelay;
-
+    [SerializeField] bool _unlimitedAmmo;
+    [SerializeField] int _remainingAmmo;
     bool _deployingWeapons;
 
 
@@ -50,9 +51,16 @@ public class WeaponDeployer : MonoBehaviour
 
     void DeployWeapon()
     {
+        if (_remainingAmmo == 0 && !_unlimitedAmmo)
+            return;
+
         GameObject.Instantiate(_weapon, transform.position, transform.rotation);
+
+        if (!_unlimitedAmmo)
+        {
+            _remainingAmmo--;
+            Debug.Log("-- remaining ammo " + _remainingAmmo);
+        }
+
     }
-
-
-
 }
