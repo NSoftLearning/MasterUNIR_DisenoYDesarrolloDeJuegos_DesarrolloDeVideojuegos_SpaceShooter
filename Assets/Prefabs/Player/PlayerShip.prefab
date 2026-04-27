@@ -207,60 +207,6 @@ MonoBehaviour:
   _currentLife: 0
   _damageableType: {fileID: 11400000, guid: 871ce76de25a6f043bd6756fe6e56380, type: 2}
   _maxLife: 100
-  _PlayerDied:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3802670837874695532}
-        m_TargetAssemblyTypeName: PlayerDamageFeedback, Assembly-CSharp
-        m_MethodName: ShowDeathFeedback
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: MainUiController, Assembly-CSharp
-        m_MethodName: ExitRedAlert
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  _PlayerDamaged:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3802670837874695532}
-        m_TargetAssemblyTypeName: PlayerDamageFeedback, Assembly-CSharp
-        m_MethodName: ShowDamageFeedback
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: MainUiController, Assembly-CSharp
-        m_MethodName: UpdateLifeBar
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
   _afterHitInvulnerabilityTime: 2
 --- !u!114 &3802670837874695532
 MonoBehaviour:
@@ -352,7 +298,7 @@ AudioSource:
   m_GameObject: {fileID: 7344036724405617862}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 4784246211828015778, guid: 6515f0f1864caf94fbe04b39693fc705, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1

@@ -314,6 +314,7 @@ MonoBehaviour:
   _scoreProvided: 200
   _currencyProvided: 2
   _damageOnHitWithPlayer: 100
+  _forcePositionInFrontOfPlayer: 0
   _currentLife: 8
 --- !u!114 &4347521752458919860
 MonoBehaviour:
@@ -346,7 +347,7 @@ AudioSource:
   m_GameObject: {fileID: 3077399926407538740}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 4784246211828015778, guid: 6515f0f1864caf94fbe04b39693fc705, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
