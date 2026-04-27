@@ -16,7 +16,7 @@ public class PlayerLife : MonoBehaviour, IDamageable
 
     float _invulnerableUntil;
 
-    public event Action<DamageableDestroyedData> enemyDiedAction;
+    public event Action<DamageableDestroyedData> damageableDiedAction;
 
     public DamageableTypeSO Type => _damageableType;
 

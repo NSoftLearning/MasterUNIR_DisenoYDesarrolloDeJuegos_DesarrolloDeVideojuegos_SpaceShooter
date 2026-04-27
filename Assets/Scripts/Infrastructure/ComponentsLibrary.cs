@@ -9,6 +9,7 @@ public class ComponentsLibrary : MonoBehaviour
     [SerializeField] MainUiController _mainUiController;
     [SerializeField] GameStatusSO _gameStatus;
     [SerializeField] LevelControl _levelControl;
+    [SerializeField] GameplayUiController _gameplayUiController;
 
     public Transform PlayerTransform => _playerLife.gameObject.transform;
     public GameStatusSO GameStatus => _gameStatus;
@@ -45,12 +46,14 @@ public class ComponentsLibrary : MonoBehaviour
     {
         _playerLife.PlayerDiedAction += _mainUiController.SetPlayerAsKilled;
         _playerLife.PlayerDamagedAction += _mainUiController.UpdateLifeBar;
+        _playerLife.PlayerDiedAction += _gameplayUiController.ShowPlayerDeadUI;
     }
 
     void UnwirePlayer ()
     {
         _playerLife.PlayerDiedAction -= _mainUiController.SetPlayerAsKilled;
         _playerLife.PlayerDamagedAction -= _mainUiController.UpdateLifeBar;
+        _playerLife.PlayerDiedAction -= _gameplayUiController.ShowPlayerDeadUI;
     }
 
 

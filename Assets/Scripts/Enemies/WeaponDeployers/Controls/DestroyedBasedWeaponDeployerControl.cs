@@ -24,12 +24,12 @@ public class DestroyedBasedWeaponDeployerControl : MonoBehaviour, IWeaponDeploye
     }
     void OnEnable()
     {
-        _damageable.enemyDiedAction += HandleDamageableDestroyed;
+        _damageable.damageableDiedAction += HandleDamageableDestroyed;
     }
 
     private void OnDisable()
     {
-        _damageable.enemyDiedAction -= HandleDamageableDestroyed;
+        _damageable.damageableDiedAction -= HandleDamageableDestroyed;
     }
 
 }

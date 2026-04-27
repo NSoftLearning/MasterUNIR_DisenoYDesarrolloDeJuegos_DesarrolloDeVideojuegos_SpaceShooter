@@ -52,7 +52,7 @@ public class DoubleAreaDamage : MonoBehaviour, IDamageDealer
 
     void DealDamageToValidTargets() 
     {
-        Collider2D[] collidersFound =   Physics2D.OverlapCircleAll(transform.position, _detonateAtSecond);
+        Collider2D[] collidersFound = Physics2D.OverlapCircleAll(transform.position, _damageRadius);
 
       foreach (Collider2D collider in collidersFound)
         {

@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class GlobalAmbientController : MonoBehaviour
 {
     [SerializeField] Animator _animator;
-
+    [SerializeField] GameStatusSO _gameStatusSO;
 
     public void Start()
     {

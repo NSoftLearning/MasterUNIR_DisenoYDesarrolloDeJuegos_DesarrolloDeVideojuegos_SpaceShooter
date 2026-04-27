@@ -14,7 +14,7 @@ public class StandardEnemyWaveSO : ScriptableObject, IEnemyFactory
     public virtual Enemy CreateEnemy (Vector3 position, Quaternion rotation)
     {
        Enemy newEnemy =  Instantiate(enemyType, position, rotation);
-       newEnemy.enemyDiedAction += ComponentLocatorService.Components.GameStatus.HandleEnemyDead;
+       newEnemy.damageableDiedAction += ComponentLocatorService.Components.GameStatus.HandleEnemyDead;
 
 
 

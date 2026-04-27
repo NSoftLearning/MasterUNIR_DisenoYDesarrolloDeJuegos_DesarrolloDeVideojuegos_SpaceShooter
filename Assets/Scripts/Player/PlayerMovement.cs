@@ -10,14 +10,6 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] Rigidbody2D _rigidbody2d;
     Vector2 _movementValue;
-    
-
-    private void Awake()
-    {
-        _movementInputAction.action.started += ChangeMovementState;
-        _movementInputAction.action.canceled += ChangeMovementState;
-        _movementInputAction.action.performed += ChangeMovementState;
-    }
 
     private void ChangeMovementState(InputAction.CallbackContext context)
     {
@@ -28,11 +20,17 @@ public class PlayerMovement : MonoBehaviour
     public void OnEnable()
     {
         _movementInputAction.action.Enable();
+        _movementInputAction.action.started += ChangeMovementState;
+        _movementInputAction.action.canceled += ChangeMovementState;
+        _movementInputAction.action.performed += ChangeMovementState;
     }
 
     public void OnDisable()
     {
         _movementInputAction.action.Disable();
+        _movementInputAction.action.started -= ChangeMovementState;
+        _movementInputAction.action.canceled -= ChangeMovementState;
+        _movementInputAction.action.performed -= ChangeMovementState;
     }
 }
 

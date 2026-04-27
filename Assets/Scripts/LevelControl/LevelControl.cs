@@ -41,7 +41,7 @@ public class LevelControl : MonoBehaviour
     private void HandleNewEnemyCreated(Enemy enemy)
     {
         _mustDestroyCount++;
-        enemy.enemyDiedAction += DecreaseMustDestroyCount;
+        enemy.damageableDiedAction += DecreaseMustDestroyCount;
     }
 
    void DecreaseMustDestroyCount(DamageableDestroyedData data)

@@ -58,14 +58,14 @@ public class EnemyDamageFeedback : MonoBehaviour
     private void OnEnable()
     {
         _enemy.enemyDamagedAction += ShowDamageFeedback;
-        _enemy.enemyDiedAction += ShowDestroyedFeedback;
+        _enemy.damageableDiedAction += ShowDestroyedFeedback;
 ;
 }
 
     private void OnDisable()
     {
         _enemy.enemyDamagedAction -= ShowDamageFeedback;
-        _enemy.enemyDiedAction -= ShowDestroyedFeedback;
+        _enemy.damageableDiedAction -= ShowDestroyedFeedback;
 
     }
 
