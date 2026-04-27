@@ -54,8 +54,7 @@ public class Enemy : MonoBehaviour, IDamageable
             Destroy(gameObject);
         }
         else
-        {
-            // ememyDamaged_UNITYEVENT.Invoke();
+        {          
             enemyDamagedAction.Invoke();
         }
     }
@@ -72,7 +71,7 @@ public class Enemy : MonoBehaviour, IDamageable
 
     public void OnDisable()
     {
-        _damageDealer.validTargetHit += ResolveHitWithTarget;
+        _damageDealer.validTargetHit -= ResolveHitWithTarget;
     }
 
 }

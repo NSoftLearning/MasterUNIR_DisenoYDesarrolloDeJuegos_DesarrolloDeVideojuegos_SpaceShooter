@@ -57,6 +57,10 @@ PrefabInstance:
       value: PlayerWeaponDeployer_FastFire
       objectReference: {fileID: 0}
     - target: {fileID: 9156462849403232145, guid: 6d889ab551c6df8469985db6ec2cc41e, type: 3}
+      propertyPath: _weapon
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 9156462849403232145, guid: 6d889ab551c6df8469985db6ec2cc41e, type: 3}
       propertyPath: _burstDelay
       value: 0.15
       objectReference: {fileID: 0}

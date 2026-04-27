@@ -34,14 +34,14 @@ public class AcceleratedForwardMovementPhysics : MonoBehaviour
         if (_rigidBody.linearVelocity.magnitude >= _maxVelocity)
             return;
         if (!isAcelerating)
-            accelerationStarted.Invoke();
+            accelerationStarted?.Invoke();
 
         isAcelerating = true;
 
         float newVelocity = Mathf.Lerp(_startingVelocity, _maxVelocity, (Time.time - _startAccelerationTime) / _timeToMaxVelocity);
         
         _rigidBody.linearVelocity = _rigidBody.linearVelocity.normalized * newVelocity;
-        maxSpeedReached.Invoke();    
+        maxSpeedReached?.Invoke();    
 
     }
 

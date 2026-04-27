@@ -44,8 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14b52e18a2259ee48a9f34a7f9397f45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WeaponDeployer
-  _weapon: {fileID: 4006518776011108591, guid: 5a4fddad7a1790e4da8cbb6f9b5fdcd2, type: 3}
-  _burstDelay: 0.5
+  _weapon: {fileID: 7831799507454129893, guid: f2c77b6ebbafc544284f923790a210af, type: 3}
+  _burstDelay: 2
   _firstDeploymentDelay: 0
   _unlimitedAmmo: 1
   _remainingAmmo: 0
