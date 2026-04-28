@@ -14,7 +14,7 @@ public class ComponentsLibrary : MonoBehaviour
     public Transform PlayerTransform => _playerLife.gameObject.transform;
     public GameStatusSO GameStatus => _gameStatus;
     public LevelControl LevelControl => _levelControl;
-
+    public GameStatusSO GameStatusSO => _gameStatus;
 
     public void Awake()
     {
@@ -47,6 +47,7 @@ public class ComponentsLibrary : MonoBehaviour
         _playerLife.PlayerDiedAction += _mainUiController.SetPlayerAsKilled;
         _playerLife.PlayerDamagedAction += _mainUiController.UpdateLifeBar;
         _playerLife.PlayerDiedAction += _gameplayUiController.ShowPlayerDeadUI;
+        _levelControl.LevelFinished += _gameplayUiController.ShowLevelClearedUI;
     }
 
     void UnwirePlayer ()
@@ -54,6 +55,7 @@ public class ComponentsLibrary : MonoBehaviour
         _playerLife.PlayerDiedAction -= _mainUiController.SetPlayerAsKilled;
         _playerLife.PlayerDamagedAction -= _mainUiController.UpdateLifeBar;
         _playerLife.PlayerDiedAction -= _gameplayUiController.ShowPlayerDeadUI;
+        _levelControl.LevelFinished -= _gameplayUiController.ShowLevelClearedUI;
     }
 
 

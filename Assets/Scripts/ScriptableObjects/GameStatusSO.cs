@@ -5,7 +5,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "GameStatus", menuName = "ScriptableObjects/GameStatus", order = 1)]
 public class GameStatusSO : ScriptableObject
 {
-    [SerializeField] int _score;
+    [SerializeField] public LevelsLibrarySO levelsLibrary;
+    [SerializeField] public int score;
     [SerializeField] public int cash;
     [SerializeField] int _nextLevel;
     [SerializeField] public  bool topSlotWeaponSet;
@@ -14,7 +15,7 @@ public class GameStatusSO : ScriptableObject
     [SerializeField] public int bottomSlotWeaponIndex;
 
 
-    public int _currentLevel;
+    public int _currentGameLevel;
 
 
     public Action<int> scoreChanged;
@@ -22,7 +23,7 @@ public class GameStatusSO : ScriptableObject
 
     public  void HandleEnemyDead (DamageableDestroyedData enemyDeadData)
     {
-        _score += enemyDeadData.scoreModifier;
+        score += enemyDeadData.scoreModifier;
         cash += enemyDeadData.currencyModifier;
 
         RequestForFreshData();
@@ -31,7 +32,7 @@ public class GameStatusSO : ScriptableObject
 
     public void RequestForFreshData ()
     {
-        scoreChanged.Invoke(_score);
+        scoreChanged.Invoke(score);
         cashChanged.Invoke(cash);
     }
 
@@ -39,10 +40,10 @@ public class GameStatusSO : ScriptableObject
     [ContextMenu(nameof(ResetGameStatus))]
     public void ResetGameStatus ()
     {
-        _score = 0;
-        cash = 0;
-        _currentLevel = 0;
-        _nextLevel = 0;
+      //  score = 0;
+    //    cash = 0;
+     //   _currentGameLevel = 0;
+     //   _nextLevel = 0;
     }
 
 

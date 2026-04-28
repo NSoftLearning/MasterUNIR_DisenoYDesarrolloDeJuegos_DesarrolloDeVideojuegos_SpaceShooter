@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: RapidFirePlasma_StoreItem
   m_EditorClassIdentifier: Assembly-CSharp::WeaponDeployerStoreItemSO
   weaponName: Plasma ligero
-  _weaponDeployer: {fileID: 5891175950506290095, guid: 05e37b03f1dbb85409b7261614491773, type: 3}
+  weaponDeployerPrefab: {fileID: 5891175950506290095, guid: 05e37b03f1dbb85409b7261614491773, type: 3}
   cost: 10
   icon: {fileID: 8132948862792318974, guid: 93b53b1ce358f444e8c11b94c37836a5, type: 3}
   description: Gran cadencia de disparo

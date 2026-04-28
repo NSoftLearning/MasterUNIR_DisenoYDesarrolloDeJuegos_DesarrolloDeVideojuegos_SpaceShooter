@@ -10,12 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 53ca2d424eba5d84d9c1931c0f15d7f2, type: 3}
-  m_Name: Level01_BottomVector
+  m_Name: Level01_MediumVector
   m_EditorClassIdentifier: Assembly-CSharp::EnemiesAttackVector
-  targetSpawnPoint: {fileID: 11400000, guid: 0e655e727fa00c541a77bf5763d92fcb, type: 2}
+  targetSpawnPoint: {fileID: 11400000, guid: 7fb7bf8356db8054a883b8372615cfde, type: 2}
   enemyWaves:
-  - {fileID: 11400000, guid: e049f287a0527714fba5c077e9794c37, type: 2}
-  - {fileID: 11400000, guid: 7cc3eb2f4b17ed94294f1da3a307d2ba, type: 2}
-  - {fileID: 11400000, guid: 51f70c8d01666504b9cb96ac6d1c95c3, type: 2}
-  - {fileID: 11400000, guid: aec75ed801c027249a9b0be5bb923a62, type: 2}
+  - {fileID: 11400000, guid: c953bb193ae46dc4cb69f70a62e60113, type: 2}
   - {fileID: 11400000, guid: 87719ce4bacaea14389b516cb6001cca, type: 2}

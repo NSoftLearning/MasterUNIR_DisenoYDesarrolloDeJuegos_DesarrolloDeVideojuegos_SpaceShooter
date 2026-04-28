@@ -11,6 +11,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GameplayScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: Assets/Scenes/WeaponsLocker.unity
+    guid: 0e04f949bd741934b8f6a8ffa0f801cc
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: e5824a008087b384ab395e8c78831f62, type: 3}
   m_UseUCBPForAssetBundles: 0

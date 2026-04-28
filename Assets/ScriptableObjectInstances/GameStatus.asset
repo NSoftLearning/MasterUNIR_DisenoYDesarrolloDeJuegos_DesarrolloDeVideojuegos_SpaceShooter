@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22ff8cac1d899a145be605fb1d8d1946, type: 3}
   m_Name: GameStatus
   m_EditorClassIdentifier: Assembly-CSharp::GameStatusSO
-  _score: 680
-  cash: 40
+  levelsLibrary: {fileID: 11400000, guid: 676d319d16da7b640abacd4e45ca9d16, type: 2}
+  score: 300
+  cash: 5
   _nextLevel: 0
-  topSlotWeaponSet: 0
+  topSlotWeaponSet: 1
   topSlotWeaponIndex: 1
-  bottomSlotWeaponSet: 1
+  bottomSlotWeaponSet: 0
   bottomSlotWeaponIndex: 0
-  _currentLevel: 0
+  _currentGameLevel: 0

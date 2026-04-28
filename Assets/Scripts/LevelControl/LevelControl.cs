@@ -6,16 +6,17 @@ public class LevelControl : MonoBehaviour
 {
     [SerializeField] public List<EnemySpawner> _enemySpanwers;
     [SerializeField] LevelsLibrarySO _levelsLibrary;
-
+    [SerializeField] GameStatusSO _gameStatus;
     [SerializeField] int _mustDestroyCount;
 
     bool endOfLevelEventAlreadyCaptured;
+    public event Action LevelFinished;
 
     public void Start ()
     {
         endOfLevelEventAlreadyCaptured = false;
         _mustDestroyCount = 0;
-        LevelDataSO currentLevelData = _levelsLibrary.levelsData[ComponentLocatorService.Components.GameStatus._currentLevel];
+        LevelDataSO currentLevelData = _levelsLibrary.levelsData[ComponentLocatorService.Components.GameStatus._currentGameLevel];
         foreach (EnemiesAttackVector enemiesAttackVector in currentLevelData._enemiesAttackVectors)
         {
             EnemySpawner spawnPoint = _enemySpanwers.Find(x => x.spawnPointIdentifier == enemiesAttackVector.targetSpawnPoint);
@@ -35,7 +36,8 @@ public class LevelControl : MonoBehaviour
         endOfLevelEventAlreadyCaptured = true;
 
 
-        Debug.Log("---- LEVEL IS FINISHED -----");
+        _gameStatus._currentGameLevel++;
+        LevelFinished?.Invoke();        
     }
 
     private void HandleNewEnemyCreated(Enemy enemy)
@@ -80,7 +82,7 @@ public class LevelControl : MonoBehaviour
 
     private void OnDestroy()
     {
-        LevelDataSO currentLevelData = _levelsLibrary.levelsData[ComponentLocatorService.Components.GameStatus._currentLevel];
+        LevelDataSO currentLevelData = _levelsLibrary.levelsData[ComponentLocatorService.Components.GameStatus._currentGameLevel];
         foreach (EnemiesAttackVector enemiesAttackVector in currentLevelData._enemiesAttackVectors)
         {
             EnemySpawner spawnPoint = _enemySpanwers.Find(x => x.spawnPointIdentifier == enemiesAttackVector.targetSpawnPoint);

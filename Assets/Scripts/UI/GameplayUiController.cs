@@ -2,23 +2,33 @@ using UnityEngine;
 
 public class GameplayUiController : MonoBehaviour
 {
-
-
-    [SerializeField] GameObject _playerDeadUI;
+    [SerializeField] GameObject _endOfGameUI;
+    [SerializeField] GameObject _levelClearedUI;
+    [SerializeField] PlayerDeadUIController _playerDeadUI;
+    [SerializeField] GameStatusSO _gameStatusSO;
+    
 
     private void Start()
     {
-        _playerDeadUI.SetActive(false);
+        _playerDeadUI.Hide();
+        _levelClearedUI.SetActive(false);
+        _endOfGameUI.SetActive(false);
     }
 
     public void ShowPlayerDeadUI()
     {
-        _playerDeadUI.SetActive(true);
+        _playerDeadUI.Show();
     }
 
-    private void OnEnable()
+    public void ShowLevelClearedUI()
     {
-        
+        if (_gameStatusSO._currentGameLevel >= _gameStatusSO.levelsLibrary.levelsData.Count)
+        {
+            _endOfGameUI.SetActive(true);
+            return;
+        }
+
+        _levelClearedUI.SetActive(true);
     }
 
 }

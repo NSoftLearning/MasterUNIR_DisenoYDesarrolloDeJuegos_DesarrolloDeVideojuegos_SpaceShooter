@@ -6,7 +6,7 @@ using UnityEngine;
 public class WeaponDeployerStoreItemSO : ScriptableObject
 {
      public string weaponName;
-     public WeaponDeployer _weaponDeployer;
+     public WeaponDeployer weaponDeployerPrefab;
      public int cost;
      public Sprite icon;
      public string description;

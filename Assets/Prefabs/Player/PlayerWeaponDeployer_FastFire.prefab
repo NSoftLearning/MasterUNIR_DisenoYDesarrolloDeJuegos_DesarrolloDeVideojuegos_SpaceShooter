@@ -59,7 +59,7 @@ PrefabInstance:
     - target: {fileID: 9156462849403232145, guid: 6d889ab551c6df8469985db6ec2cc41e, type: 3}
       propertyPath: _weapon
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 5676245122612674042, guid: 315c18e6bce2abe428d94db7d476db48, type: 3}
     - target: {fileID: 9156462849403232145, guid: 6d889ab551c6df8469985db6ec2cc41e, type: 3}
       propertyPath: _burstDelay
       value: 0.15

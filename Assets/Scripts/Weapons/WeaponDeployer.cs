@@ -59,7 +59,7 @@ public class WeaponDeployer : MonoBehaviour
         if (!_unlimitedAmmo)
         {
             _remainingAmmo--;
-            Debug.Log("-- remaining ammo " + _remainingAmmo);
+            //Debug.Log("-- remaining ammo " + _remainingAmmo);
         }
 
     }

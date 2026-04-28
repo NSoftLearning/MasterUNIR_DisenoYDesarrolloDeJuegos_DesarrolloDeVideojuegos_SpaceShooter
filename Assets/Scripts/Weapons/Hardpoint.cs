@@ -6,7 +6,13 @@ class Hardpoint : MonoBehaviour
 {
     [SerializeField] WeaponDeployer _weaponDeployer;
     [SerializeField] InputActionReference _trigger;
+    [SerializeField] WeaponsLIbrarySO _weaponsLibrary;
 
+    
+    public void SetWeapon (int weaponIndexInLibrary)
+    {
+        _weaponDeployer = Instantiate(_weaponsLibrary.availableWeapons[weaponIndexInLibrary].weaponDeployerPrefab, transform.position, transform.rotation, transform);
+    }
 
     public void OnEnable()
     {
@@ -18,11 +24,16 @@ class Hardpoint : MonoBehaviour
 
     private void StartRequestHardpointUse(InputAction.CallbackContext context)
     {
+        if (_weaponDeployer == null)
+            return;
         _weaponDeployer.StartDeployingWeapons();
     }
 
     private void CancelRequestHardpointUse(InputAction.CallbackContext context)
     {
+
+        if (_weaponDeployer == null)
+            return;
         _weaponDeployer.StopDeployingWeapons();
     }
 

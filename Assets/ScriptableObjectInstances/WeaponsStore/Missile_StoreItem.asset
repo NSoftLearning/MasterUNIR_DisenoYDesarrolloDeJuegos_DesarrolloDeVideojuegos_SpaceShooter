@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Missile_StoreItem
   m_EditorClassIdentifier: Assembly-CSharp::WeaponDeployerStoreItemSO
   weaponName: Misil
-  _weaponDeployer: {fileID: 9156462849403232145, guid: 6d889ab551c6df8469985db6ec2cc41e, type: 3}
+  weaponDeployerPrefab: {fileID: 9156462849403232145, guid: 6d889ab551c6df8469985db6ec2cc41e, type: 3}
   cost: 15
   icon: {fileID: -8561806557982860685, guid: 93b53b1ce358f444e8c11b94c37836a5, type: 3}
   description: "Disparo lento, da\xF1o de area"
