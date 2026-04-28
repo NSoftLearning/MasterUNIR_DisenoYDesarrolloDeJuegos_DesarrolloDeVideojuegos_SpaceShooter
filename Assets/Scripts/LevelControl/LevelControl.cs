@@ -16,6 +16,7 @@ public class LevelControl : MonoBehaviour
     {
         endOfLevelEventAlreadyCaptured = false;
         _mustDestroyCount = 0;
+        Debug.Log("--- > starting level " + ComponentLocatorService.Components.GameStatus._currentGameLevel);
         LevelDataSO currentLevelData = _levelsLibrary.levelsData[ComponentLocatorService.Components.GameStatus._currentGameLevel];
         foreach (EnemiesAttackVector enemiesAttackVector in currentLevelData._enemiesAttackVectors)
         {
@@ -88,7 +89,7 @@ public class LevelControl : MonoBehaviour
 
     private void OnDestroy()
     {
-        LevelDataSO currentLevelData = _levelsLibrary.levelsData[ComponentLocatorService.Components.GameStatus._currentGameLevel];
+        LevelDataSO currentLevelData = _levelsLibrary.levelsData[ComponentLocatorService.Components.GameStatus._currentGameLevel -1];
         foreach (EnemiesAttackVector enemiesAttackVector in currentLevelData._enemiesAttackVectors)
         {
             EnemySpawner spawnPoint = _enemySpanwers.Find(x => x.spawnPointIdentifier == enemiesAttackVector.targetSpawnPoint);

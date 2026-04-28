@@ -60,6 +60,7 @@ public class ComponentsLibrary : MonoBehaviour
         _playerLife.PlayerDiedAction += _mainUiController.SetPlayerAsKilled;
         _playerLife.PlayerDamagedAction += _mainUiController.UpdateLifeBar;
         _playerLife.PlayerDiedAction += _gameplayUiController.ShowPlayerDeadUI;
+        
         _levelControl.LevelFinished += _gameplayUiController.ShowLevelClearedUI;
     }
 
@@ -68,6 +69,7 @@ public class ComponentsLibrary : MonoBehaviour
         _playerLife.PlayerDiedAction -= _mainUiController.SetPlayerAsKilled;
         _playerLife.PlayerDamagedAction -= _mainUiController.UpdateLifeBar;
         _playerLife.PlayerDiedAction -= _gameplayUiController.ShowPlayerDeadUI;
+        _levelControl.LevelFinished -= _playerLife.MakePlayerInvulnerable;
         _levelControl.LevelFinished -= _gameplayUiController.ShowLevelClearedUI;
     }
 

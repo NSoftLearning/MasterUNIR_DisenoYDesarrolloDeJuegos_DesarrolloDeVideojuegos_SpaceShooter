@@ -1,7 +1,7 @@
 using TMPro;
 using UnityEngine;
 
-public class PlayerDeadUIController : MonoBehaviour
+public class UIWithScore : MonoBehaviour
 {
     [SerializeField] TMP_Text _score;
     [SerializeField] GameStatusSO _gameStatus;

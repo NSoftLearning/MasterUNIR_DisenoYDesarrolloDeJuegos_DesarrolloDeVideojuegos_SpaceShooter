@@ -61,6 +61,10 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2807543382764829652, guid: 9ef0e4f1a97d41f4689b6adf550cf196, type: 3}
+      propertyPath: _shotDelay
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2807543382764829652, guid: 9ef0e4f1a97d41f4689b6adf550cf196, type: 3}
       propertyPath: _maxShotsPerBurst
       value: 8
       objectReference: {fileID: 0}

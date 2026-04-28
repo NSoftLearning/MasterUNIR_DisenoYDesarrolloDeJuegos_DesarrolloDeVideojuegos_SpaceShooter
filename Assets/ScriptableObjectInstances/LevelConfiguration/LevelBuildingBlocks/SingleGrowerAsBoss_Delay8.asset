@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5a27ea685f204a745b1dd84e8c85dc75, type: 3}
-  m_Name: Wave04_BottomVector_Grower
+  m_Name: SingleGrowerAsBoss_Delay8
   m_EditorClassIdentifier: Assembly-CSharp::standardEnemyGroupSO
-  startDelay: 5
+  startDelay: 8
   enemyType: {fileID: 4505391250943652486, guid: 1281d7c0e787a0046a28608e03a9fa45, type: 3}
   enemyToEnemyDelay: 1
-  enemyQuantity: 2
-  spawnPointAdjustment: 1
+  enemyQuantity: 1
+  spawnPointAdjustment: 0
   requiresDestructionToEndwave: 1
   IsEndOfLevel: 0

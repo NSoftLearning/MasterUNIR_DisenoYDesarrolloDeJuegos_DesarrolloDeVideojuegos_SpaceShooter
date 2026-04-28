@@ -12,13 +12,15 @@ public class PlayerLife : MonoBehaviour, IDamageable
     public event Action PlayerDiedAction;
     public event Action <PlayerStatusData> PlayerDamagedAction;
     [SerializeField] float _afterHitInvulnerabilityTime = 2;
-
+    [SerializeField] Collider2D _collider;
 
     float _invulnerableUntil;
 
     public event Action<DamageableDestroyedData> damageableDiedAction;
 
     public DamageableTypeSO Type => _damageableType;
+
+
 
     public bool UnderTemporalDamageProtection => _invulnerableUntil > Time.time;
 
@@ -45,5 +47,10 @@ public class PlayerLife : MonoBehaviour, IDamageable
         { 
             PlayerDamagedAction.Invoke  (new PlayerStatusData(_afterHitInvulnerabilityTime, _maxLife, _currentLife));
         }
+    }
+
+    public void MakePlayerInvulnerable()
+    {
+        _collider.enabled = false;
     }
 }

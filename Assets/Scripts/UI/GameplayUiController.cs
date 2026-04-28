@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class GameplayUiController : MonoBehaviour
 {
-    [SerializeField] GameObject _endOfGameUI;
+    [SerializeField] UIWithScore _endOfGameUI;
     [SerializeField] GameObject _levelClearedUI;
-    [SerializeField] PlayerDeadUIController _playerDeadUI;
+    [SerializeField] UIWithScore _playerDeadUI;
     [SerializeField] GameStatusSO _gameStatusSO;
     [SerializeField] public WeaponDeployerUI topWeaponDeployerUI;
     [SerializeField] public WeaponDeployerUI bottomWeaponDeployerUI;
@@ -14,7 +14,7 @@ public class GameplayUiController : MonoBehaviour
     {
         _playerDeadUI.Hide();
         _levelClearedUI.SetActive(false);
-        _endOfGameUI.SetActive(false);
+        _endOfGameUI.Hide();
 
         topWeaponDeployerUI.Setup(
             ComponentLocatorService.Components.GameStatus.topSlotWeaponIndex, 
@@ -44,7 +44,7 @@ public class GameplayUiController : MonoBehaviour
     {
         if (_gameStatusSO._currentGameLevel >= _gameStatusSO.levelsLibrary.levelsData.Count)
         {
-            _endOfGameUI.SetActive(true);
+            _endOfGameUI.Show();
             return;
         }
 

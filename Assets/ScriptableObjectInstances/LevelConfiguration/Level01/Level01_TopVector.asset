@@ -14,5 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemiesAttackVector
   targetSpawnPoint: {fileID: 11400000, guid: 764eada560c24e74db53d44bbdc646ab, type: 2}
   enemyWaves:
-  - {fileID: 11400000, guid: 6db558923b7585f4388bb6fdfae788a1, type: 2}
+  - {fileID: 11400000, guid: c953bb193ae46dc4cb69f70a62e60113, type: 2}
+  - {fileID: 11400000, guid: e049f287a0527714fba5c077e9794c37, type: 2}
+  - {fileID: 11400000, guid: 0dd9d6eba0ac0184890ed24defa3e4e5, type: 2}
+  - {fileID: 11400000, guid: c953bb193ae46dc4cb69f70a62e60113, type: 2}
+  - {fileID: 11400000, guid: dc3ef755e087c5548bc23c32275f699d, type: 2}
   - {fileID: 11400000, guid: 87719ce4bacaea14389b516cb6001cca, type: 2}

@@ -162,6 +162,7 @@ MonoBehaviour:
   _damageableType: {fileID: 11400000, guid: 871ce76de25a6f043bd6756fe6e56380, type: 2}
   _maxLife: 100
   _afterHitInvulnerabilityTime: 2
+  _collider: {fileID: 2976502439811737872}
 --- !u!114 &3802670837874695532
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -354,6 +355,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ShipSetupAgent
   _topHardpoint: {fileID: 8324271215708298066}
   _bottomHardpoint: {fileID: 3293897422740041588}
+  topWeaponDeployer: {fileID: 0}
+  bottomWeaponDeployer: {fileID: 0}
 --- !u!1 &8472956654981751240
 GameObject:
   m_ObjectHideFlags: 0
