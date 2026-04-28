@@ -52,5 +52,7 @@ public class PlayerLife : MonoBehaviour, IDamageable
     public void MakePlayerInvulnerable()
     {
         _collider.enabled = false;
+        _invulnerableUntil += Time.time + 5000;
+
     }
 }

@@ -42,7 +42,7 @@ public class LevelControl : MonoBehaviour
             return;
         endOfLevelEventAlreadyCaptured = true;
 
-
+        TeardownLevel();
         _gameStatus._currentGameLevel++;
         LevelFinished?.Invoke();        
     }
@@ -84,12 +84,11 @@ public class LevelControl : MonoBehaviour
         }
 
         //si all waves finished = true esperar unos segundos y terminar nivel.¿¿??
-
     }
 
-    private void OnDestroy()
+    private void TeardownLevel()
     {
-        LevelDataSO currentLevelData = _levelsLibrary.levelsData[ComponentLocatorService.Components.GameStatus._currentGameLevel -1];
+        LevelDataSO currentLevelData = _levelsLibrary.levelsData[ComponentLocatorService.Components.GameStatus._currentGameLevel];
         foreach (EnemiesAttackVector enemiesAttackVector in currentLevelData._enemiesAttackVectors)
         {
             EnemySpawner spawnPoint = _enemySpanwers.Find(x => x.spawnPointIdentifier == enemiesAttackVector.targetSpawnPoint);
