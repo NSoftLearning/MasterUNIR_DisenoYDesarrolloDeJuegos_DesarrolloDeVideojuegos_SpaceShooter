@@ -8,6 +8,8 @@ using UnityEngine;
 public class LevelDataSO : ScriptableObject
 {
  [SerializeField]public List<EnemiesAttackVector> _enemiesAttackVectors;
+    [SerializeField] public GameObject _levelBackground;
+    [SerializeField] public float _verticalOffset;
 
 
 }

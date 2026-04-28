@@ -7,8 +7,7 @@ public class GameStatusSO : ScriptableObject
 {
     [SerializeField] public LevelsLibrarySO levelsLibrary;
     [SerializeField] public int score;
-    [SerializeField] public int cash;
-    [SerializeField] int _nextLevel;
+    [SerializeField] public int cash;    
     [SerializeField] public  bool topSlotWeaponSet;
     [SerializeField] public int topSlotWeaponIndex;
     [SerializeField] public bool bottomSlotWeaponSet;
@@ -40,10 +39,13 @@ public class GameStatusSO : ScriptableObject
     [ContextMenu(nameof(ResetGameStatus))]
     public void ResetGameStatus ()
     {
-      //  score = 0;
-    //    cash = 0;
-     //   _currentGameLevel = 0;
-     //   _nextLevel = 0;
+      score = 0;
+     cash = 0;
+     _currentGameLevel = 0;
+     
+        topSlotWeaponSet = false;
+        bottomSlotWeaponSet = false; 
+
     }
 
 

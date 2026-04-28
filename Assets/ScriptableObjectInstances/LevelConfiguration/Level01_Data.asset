@@ -16,3 +16,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9105c707a661ab24b913e4d5e26fce99, type: 2}
   - {fileID: 11400000, guid: ee3694c8dc93add4f9fc70ff2ef99223, type: 2}
   - {fileID: 11400000, guid: ae8ef9761987c42479b1dc88f86a8d61, type: 2}
+  _levelBackground: {fileID: 3243459453343574176, guid: 448e7d93c86e64b4090054f20587a778, type: 3}
+  _verticalOffset: 10.96

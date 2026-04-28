@@ -12,7 +12,7 @@ public class LevelControl : MonoBehaviour
     bool endOfLevelEventAlreadyCaptured;
     public event Action LevelFinished;
 
-    public void Start ()
+    public void Start()
     {
         endOfLevelEventAlreadyCaptured = false;
         _mustDestroyCount = 0;
@@ -21,12 +21,18 @@ public class LevelControl : MonoBehaviour
         {
             EnemySpawner spawnPoint = _enemySpanwers.Find(x => x.spawnPointIdentifier == enemiesAttackVector.targetSpawnPoint);
             spawnPoint.Initialize(enemiesAttackVector);
-            
+
 
             spawnPoint.StartPauseForNextWave += CheckWavesStatus;
             spawnPoint.EnemySpawned += HandleNewEnemyCreated;
             spawnPoint.EndOfLevelReached += HandleAllWavesFinished;
-        }       
+        }
+
+
+        GameObject background = Instantiate(
+            _levelsLibrary.levelsData[ComponentLocatorService.Components.GameStatus._currentGameLevel]._levelBackground,
+            Vector3.zero + Vector3.up * _levelsLibrary.levelsData[ComponentLocatorService.Components.GameStatus._currentGameLevel]._verticalOffset,
+            Quaternion.identity);
     }
 
     private void HandleAllWavesFinished()
