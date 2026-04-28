@@ -9,9 +9,13 @@ class Hardpoint : MonoBehaviour
     [SerializeField] WeaponsLIbrarySO _weaponsLibrary;
 
     
-    public void SetWeapon (int weaponIndexInLibrary)
+    public WeaponDeployer SetWeapon (int weaponIndexInLibrary)
     {
         _weaponDeployer = Instantiate(_weaponsLibrary.availableWeapons[weaponIndexInLibrary].weaponDeployerPrefab, transform.position, transform.rotation, transform);
+        _weaponDeployer.Setup (
+            _weaponsLibrary.availableWeapons[weaponIndexInLibrary].ammo, 
+            _weaponsLibrary.availableWeapons[weaponIndexInLibrary].unlimitedAmmo );
+        return _weaponDeployer;
     }
 
     public void OnEnable()

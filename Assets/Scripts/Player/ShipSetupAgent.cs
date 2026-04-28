@@ -1,3 +1,4 @@
+using System;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -5,22 +6,26 @@ public class ShipSetupAgent : MonoBehaviour
 {
     [SerializeField] Hardpoint _topHardpoint;
     [SerializeField] Hardpoint _bottomHardpoint;
+    [SerializeField] public WeaponDeployer topWeaponDeployer;
+    [SerializeField] public WeaponDeployer bottomWeaponDeployer;
 
-
-    private void Start()
+    public  void Initialize ()
     {
+
         SetWeaponOnTopHardpoint();
         SetWeaoponOnBottomHardpoint();
+
     }
     public void SetWeaponOnTopHardpoint ()
     {
         if (ComponentLocatorService.Components.GameStatus.topSlotWeaponSet)
-            _topHardpoint.SetWeapon(ComponentLocatorService.Components.GameStatus.topSlotWeaponIndex);
+            topWeaponDeployer = _topHardpoint.SetWeapon(ComponentLocatorService.Components.GameStatus.topSlotWeaponIndex);
     }
 
     public void SetWeaoponOnBottomHardpoint ()
     {
         if (ComponentLocatorService.Components.GameStatus.bottomSlotWeaponSet)
-            _topHardpoint.SetWeapon(ComponentLocatorService.Components.GameStatus.bottomSlotWeaponIndex);
+            bottomWeaponDeployer = _bottomHardpoint.SetWeapon(ComponentLocatorService.Components.GameStatus.bottomSlotWeaponIndex);
     }
 }
+

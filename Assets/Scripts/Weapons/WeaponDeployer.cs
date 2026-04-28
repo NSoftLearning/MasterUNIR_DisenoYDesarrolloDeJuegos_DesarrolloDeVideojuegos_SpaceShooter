@@ -12,6 +12,8 @@ public class WeaponDeployer : MonoBehaviour
     bool _deployingWeapons;
 
 
+    int _maxAmmo;
+    public Action <float> WeaponDeployed;
     float _nextFireTime;
     bool _oneOrMoreWeaponsDeployedInCycle;
 
@@ -21,6 +23,12 @@ public class WeaponDeployer : MonoBehaviour
         _nextFireTime = Time.time + _burstDelay + _firstDeploymentDelay;
     }
 
+    public void Setup (int initialAmmo, bool isAmmoUnlimited)
+    {
+        _remainingAmmo = initialAmmo;
+        _maxAmmo = initialAmmo;
+        _unlimitedAmmo = isAmmoUnlimited; 
+    }
 
     private void Update()
     {
@@ -59,8 +67,8 @@ public class WeaponDeployer : MonoBehaviour
         if (!_unlimitedAmmo)
         {
             _remainingAmmo--;
-            //Debug.Log("-- remaining ammo " + _remainingAmmo);
         }
+        WeaponDeployed?.Invoke((float)_remainingAmmo / (float)_maxAmmo);
 
     }
 }

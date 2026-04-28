@@ -22,8 +22,7 @@ public class AcceleratedForwardMovementPhysics : MonoBehaviour
         _rigidBody.linearVelocity = transform.right * _startingVelocity;
         _launchTime = Time.time;
         _startAccelerationTime = Time.time + _startAccelerationDelay;
-        _maxVelocityReachTime = _startAccelerationTime + _timeToMaxVelocity;
-        Debug.Log("initial velocity " + _rigidBody.linearVelocity.magnitude);
+        _maxVelocityReachTime = _startAccelerationTime + _timeToMaxVelocity;       
     }
 
     private void Update()

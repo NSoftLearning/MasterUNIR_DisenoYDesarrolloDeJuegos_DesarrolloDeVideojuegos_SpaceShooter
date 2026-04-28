@@ -11,4 +11,5 @@ public class WeaponDeployerStoreItemSO : ScriptableObject
      public Sprite icon;
      public string description;
      public int ammo;
+    public bool unlimitedAmmo = false;
 }

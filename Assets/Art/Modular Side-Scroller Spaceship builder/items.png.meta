@@ -564,6 +564,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -2666,7 +2679,7 @@ TextureImporter:
         width: 491
         height: 444
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2675,6 +2688,50 @@ TextureImporter:
       bones: []
       spriteID: d1e520fea677bed42a3b6c1d388ab208
       internalID: -759953838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MissileStoreIcon
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 1338
+        width: 215
+        height: 215
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 986f80e9f767f2f4ba7bcb8e820e1bd7
+      internalID: -165452867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FastPlasmaSToreIcon
+      rect:
+        serializedVersion: 2
+        x: 1176
+        y: 1351
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 714945cdc7592de4698b63f45c874fe6
+      internalID: -715598948
       vertices: []
       indices: 
       edges: []
@@ -2705,6 +2762,8 @@ TextureImporter:
       Explosion_10: 9148803566423877661
       Explosion_11: -4016013334462737405
       Explosion_12: -759953838
+      FastPlasmaSToreIcon: -715598948
+      MissileStoreIcon: -165452867
       items_0: 6761164967045977113
       items_1: 5508725064705088119
       items_10: 8132948862792318974
