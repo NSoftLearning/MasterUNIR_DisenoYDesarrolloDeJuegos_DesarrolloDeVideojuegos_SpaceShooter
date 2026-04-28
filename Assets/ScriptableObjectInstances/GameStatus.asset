@@ -13,5 +13,10 @@ MonoBehaviour:
   m_Name: GameStatus
   m_EditorClassIdentifier: Assembly-CSharp::GameStatusSO
   _score: 680
-  _cash: 18
+  cash: 40
+  _nextLevel: 0
+  topSlotWeaponSet: 0
+  topSlotWeaponIndex: 1
+  bottomSlotWeaponSet: 1
+  bottomSlotWeaponIndex: 0
   _currentLevel: 0

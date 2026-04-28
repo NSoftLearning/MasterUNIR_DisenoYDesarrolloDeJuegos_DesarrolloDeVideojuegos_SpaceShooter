@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e86046ce00741b84aa71321ebe50606a, type: 3}
+  m_Name: Missile_StoreItem
+  m_EditorClassIdentifier: Assembly-CSharp::WeaponDeployerStoreItemSO
+  weaponName: Misil
+  _weaponDeployer: {fileID: 9156462849403232145, guid: 6d889ab551c6df8469985db6ec2cc41e, type: 3}
+  cost: 15
+  icon: {fileID: -8561806557982860685, guid: 93b53b1ce358f444e8c11b94c37836a5, type: 3}
+  description: "Disparo lento, da\xF1o de area"
+  ammo: 4

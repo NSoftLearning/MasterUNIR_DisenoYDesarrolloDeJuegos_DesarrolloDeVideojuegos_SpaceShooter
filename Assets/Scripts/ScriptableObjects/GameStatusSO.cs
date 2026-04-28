@@ -6,8 +6,13 @@ using UnityEngine;
 public class GameStatusSO : ScriptableObject
 {
     [SerializeField] int _score;
-    [SerializeField] int _cash;
+    [SerializeField] public int cash;
     [SerializeField] int _nextLevel;
+    [SerializeField] public  bool topSlotWeaponSet;
+    [SerializeField] public int topSlotWeaponIndex;
+    [SerializeField] public bool bottomSlotWeaponSet;
+    [SerializeField] public int bottomSlotWeaponIndex;
+
 
     public int _currentLevel;
 
@@ -18,7 +23,7 @@ public class GameStatusSO : ScriptableObject
     public  void HandleEnemyDead (DamageableDestroyedData enemyDeadData)
     {
         _score += enemyDeadData.scoreModifier;
-        _cash += enemyDeadData.currencyModifier;
+        cash += enemyDeadData.currencyModifier;
 
         RequestForFreshData();
 
@@ -27,7 +32,7 @@ public class GameStatusSO : ScriptableObject
     public void RequestForFreshData ()
     {
         scoreChanged.Invoke(_score);
-        cashChanged.Invoke(_cash);
+        cashChanged.Invoke(cash);
     }
 
 
@@ -35,7 +40,7 @@ public class GameStatusSO : ScriptableObject
     public void ResetGameStatus ()
     {
         _score = 0;
-        _cash = 0;
+        cash = 0;
         _currentLevel = 0;
         _nextLevel = 0;
     }
