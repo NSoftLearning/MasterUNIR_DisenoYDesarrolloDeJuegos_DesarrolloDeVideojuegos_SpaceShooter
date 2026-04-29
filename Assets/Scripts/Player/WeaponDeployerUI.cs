@@ -19,7 +19,7 @@ public class WeaponDeployerUI : MonoBehaviour
 
         _overlay.fillAmount = 0;
         _image.sprite = ComponentLocatorService.Components.WeaponsLibrary.availableWeapons[index].icon;
-        _overlay.sprite = ComponentLocatorService.Components.WeaponsLibrary.availableWeapons[index].icon;
+       // _overlay.sprite = ComponentLocatorService.Components.WeaponsLibrary.availableWeapons[index].icon;
     }
     public void RefreshOveralyFillAmout (float fillAmount)
     {      
